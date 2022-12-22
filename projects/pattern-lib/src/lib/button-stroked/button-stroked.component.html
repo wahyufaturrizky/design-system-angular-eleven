@@ -1,0 +1,16 @@
+<button
+  mat-stroked-button
+  [color]="color"
+  [disabled]="disabled"
+  [ngClass]="classes"
+  [ngStyle]="{
+    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',
+    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,
+    'font-size': fontSize,
+    'line-height': lineHightSize,
+    'border-color': borderColor
+  }"
+  (click)="onEventChange($event)"
+>
+  <mat-icon *ngIf="isIcon">{{ nameIcon }}</mat-icon> {{ isLabel ? label : "" }}
+</button>
