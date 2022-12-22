@@ -1,8 +1,126 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import "~@angular/material/theming";
+
+@include mat-core();
 
 body {
   font-family: "Nunito Sans", sans-serif;
   font-family: "Roboto", sans-serif;
 }
+
+$adl-blue-palette: (
+  50: #e5f0fe,
+  100: #bddafd,
+  200: #91c1fb,
+  300: #65a8f9,
+  400: #4495f8,
+  500: #2382f7,
+  600: #1f7af6,
+  700: #1a6ff5,
+  800: #1565f3,
+  900: #0c52f1,
+  A100: #ffffff,
+  A200: #e8eeff,
+  A400: #b5c9ff,
+  A700: #9cb6ff,
+  contrast: (
+    50: #000000,
+    100: #f8f9fa,
+    200: #e9ecef,
+    300: #dee2e6,
+    400: #ced4da,
+    500: #fff,
+    600: #6c757d,
+    700: #495057,
+    800: #343a40,
+    900: #212529,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$adl-red-palette: (
+  50: #ffe0e0,
+  100: #ffb3b3,
+  200: #ff8080,
+  300: #ff4d4d,
+  400: #ff2626,
+  500: #ff0000,
+  600: #ff0000,
+  700: #ff0000,
+  800: #ff0000,
+  900: #ff0000,
+  A100: #ffffff,
+  A200: #fff2f2,
+  A400: #ffbfbf,
+  A700: #ffa6a6,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$adl-orange-palette: (
+  50: #fef2e4,
+  100: #fddfbc,
+  200: #fbca8f,
+  300: #f9b462,
+  400: #f8a440,
+  500: #f7941e,
+  600: #f68c1a,
+  700: #f58116,
+  800: #f37712,
+  900: #f1650a,
+  A100: #ffffff,
+  A200: #ffefe7,
+  A400: #ffceb4,
+  A700: #ffbe9b,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #fff,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-theme-primary: mat-palette($adl-blue-palette);
+$my-theme-accent: mat-palette($adl-orange-palette);
+$my-theme-warn: mat-palette($adl-red-palette);
+
+$my-app-theme: mat-light-theme(
+  (
+    color: (
+      primary: $my-theme-primary,
+      accent: $my-theme-accent,
+      warn: $my-theme-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($my-app-theme);

@@ -167,31 +167,48 @@
             }
         },
         {
-            "name": "ButtonSemiRoundedComponent",
-            "id": "component-ButtonSemiRoundedComponent-3210122737ac7fa32b0528cf16148af1b621daf906494768946e373e899627c49dfe7c77e670a273a355b85c2f27acbf4d9de15e849fd533891300ca74937fd2",
-            "file": "projects/pattern-lib/src/lib/button-semi-rounded/button-semi-rounded.component.ts",
+            "name": "ButtonFlatComponent",
+            "id": "component-ButtonFlatComponent-db1431be9886f4e9eee2728318ca87de8d412e4f40f0fbb339efaafc31abe9d1b30f086d93da80a2e7c7e872b51bae428032b8821a77fc1875b4970c6e654f60",
+            "file": "projects/pattern-lib/src/lib/button-flat/button-flat.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "pl-button-semi-rounded",
+            "selector": "pl-button-flat",
             "styleUrls": [
-                "./button-semi-rounded.component.scss"
+                "./button-flat.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./button-semi-rounded.component.html"
+                "./button-flat.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "borderType",
+                    "defaultValue": "'semi-rounded'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"semi-rounded\" | \"rounded\"",
+                    "decorators": []
+                },
                 {
                     "name": "color",
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 18,
                     "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "customClasses",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string | undefined",
                     "decorators": []
                 },
                 {
@@ -199,7 +216,25 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isLabel",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -211,6 +246,24 @@
                     "line": 12,
                     "type": "string | null",
                     "decorators": []
+                },
+                {
+                    "name": "nameIcon",
+                    "defaultValue": "'favorite'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'web-medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "\"mobile-small\" | \"mobile-medium\" | \"web-xxx-small\" | \"web-xx-small\" | \"web-x-small\" | \"web-small\" | \"web-medium\"",
+                    "decorators": []
                 }
             ],
             "outputsClass": [
@@ -219,7 +272,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 29,
                     "type": "EventEmitter<Event>"
                 }
             ],
@@ -231,7 +284,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 31,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -248,7 +301,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -271,12 +324,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-semi-rounded',\n  templateUrl: './button-semi-rounded.component.html',\n  styleUrls: ['./button-semi-rounded.component.scss'],\n})\nexport class ButtonSemiRoundedComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-flat',\n  templateUrl: './button-flat.component.html',\n  styleUrls: ['./button-flat.component.scss'],\n})\nexport class ButtonFlatComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() nameIcon: string | null = 'favorite';\n  @Input() isIcon: boolean = false;\n  @Input() isLabel: boolean = true;\n  @Input() customClasses: string | undefined;\n  @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Input()\n  size:\n    | 'mobile-small'\n    | 'mobile-medium'\n    | 'web-xxx-small'\n    | 'web-xx-small'\n    | 'web-x-small'\n    | 'web-small'\n    | 'web-medium' = 'web-medium';\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n\n  public get classes(): string[] {\n    return [String(this.customClasses)];\n  }\n\n  public get paddingSizeWithLable():\n    | '15px 32px'\n    | '14.5px 28px'\n    | '10.5px 28px'\n    | '6.5px 28px'\n    | '11.5px 20px'\n    | '13.5px 24px'\n    | '8.5px 28px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '15px 32px';\n      case 'web-small':\n        return '14.5px 28px';\n      case 'web-x-small':\n        return '10.5px 28px';\n      case 'web-xx-small':\n        return '8.5px 28px';\n      case 'web-xxx-small':\n        return '6.5px 28px';\n      case 'mobile-small':\n        return '11.5px 20px';\n      default:\n        return '13.5px 24px';\n    }\n  }\n\n  public get paddingSizeWithIcon():\n    | '14px'\n    | '12px'\n    | '8px'\n    | '6px'\n    | '4px'\n    | '10px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '14px';\n      case 'web-small':\n        return '12px';\n      case 'web-x-small':\n        return '8px';\n      case 'mobile-small':\n        return '8px';\n      case 'web-xx-small':\n        return '6px';\n      case 'web-xxx-small':\n        return '4px';\n      default:\n        return '10px';\n    }\n  }\n\n  public get lineHightSize(): '22px' | '19px' | '17px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '22px';\n      case 'mobile-small' || 'mobile-medium':\n        return '17px';\n      default:\n        return '19px';\n    }\n  }\n\n  public get fontSize(): '18px' | '16px' | '14px' | '10px 24px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '18px';\n      case 'mobile-small' || 'mobile-medium':\n        return '14px';\n      default:\n        return '16px';\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": "",
-                    "styleUrl": "./button-semi-rounded.component.scss"
+                    "styleUrl": "./button-flat.component.scss"
                 }
             ],
             "stylesData": "",
@@ -291,7 +344,290 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<button\n  mat-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  (click)=\"onEventChange($event)\"\n>\n  {{ label }}\n</button>\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 37
+                    }
+                },
+                "paddingSizeWithLable": {
+                    "name": "paddingSizeWithLable",
+                    "getSignature": {
+                        "name": "paddingSizeWithLable",
+                        "type": "",
+                        "returnType": "\"15px 32px\" | \"14.5px 28px\" | \"10.5px 28px\" | \"6.5px 28px\" | \"11.5px 20px\" | \"13.5px 24px\" | \"8.5px 28px\"",
+                        "line": 41
+                    }
+                },
+                "paddingSizeWithIcon": {
+                    "name": "paddingSizeWithIcon",
+                    "getSignature": {
+                        "name": "paddingSizeWithIcon",
+                        "type": "",
+                        "returnType": "\"14px\" | \"12px\" | \"8px\" | \"6px\" | \"4px\" | \"10px\"",
+                        "line": 67
+                    }
+                },
+                "lineHightSize": {
+                    "name": "lineHightSize",
+                    "getSignature": {
+                        "name": "lineHightSize",
+                        "type": "",
+                        "returnType": "\"22px\" | \"19px\" | \"17px\"",
+                        "line": 92
+                    }
+                },
+                "fontSize": {
+                    "name": "fontSize",
+                    "getSignature": {
+                        "name": "fontSize",
+                        "type": "",
+                        "returnType": "\"18px\" | \"16px\" | \"14px\" | \"10px 24px\"",
+                        "line": 103
+                    }
+                }
+            },
+            "templateData": "<button\n  mat-flat-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize\n  }\"\n  (click)=\"onEventChange($event)\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
+        },
+        {
+            "name": "ButtonStrokedComponent",
+            "id": "component-ButtonStrokedComponent-0e39518394ba456417b1c23769ac6660179f07dec08a1c5feaf7bf1bc337eae068dc51e8a3fdaabbbafd6d8210522a30df1aa0bbdb6535832c2ae481e505db5e",
+            "file": "projects/pattern-lib/src/lib/button-stroked/button-stroked.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-button-stroked",
+            "styleUrls": [
+                "./button-stroked.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button-stroked.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "borderType",
+                    "defaultValue": "'semi-rounded'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"semi-rounded\" | \"rounded\"",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "customClasses",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isLabel",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Text goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "nameIcon",
+                    "defaultValue": "'favorite'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'web-medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "\"mobile-small\" | \"mobile-medium\" | \"web-xxx-small\" | \"web-xx-small\" | \"web-x-small\" | \"web-small\" | \"web-medium\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "eventChange",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "EventEmitter<Event>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onEventChange",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-stroked',\n  templateUrl: './button-stroked.component.html',\n  styleUrls: ['./button-stroked.component.scss'],\n})\nexport class ButtonStrokedComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() nameIcon: string | null = 'favorite';\n  @Input() isIcon: boolean = false;\n  @Input() isLabel: boolean = true;\n  @Input() customClasses: string | undefined;\n  @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Input()\n  size:\n    | 'mobile-small'\n    | 'mobile-medium'\n    | 'web-xxx-small'\n    | 'web-xx-small'\n    | 'web-x-small'\n    | 'web-small'\n    | 'web-medium' = 'web-medium';\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n\n  public get classes(): string[] {\n    return [String(this.customClasses)];\n  }\n\n  public get paddingSizeWithLable():\n    | '15px 32px'\n    | '14.5px 28px'\n    | '10.5px 28px'\n    | '6.5px 28px'\n    | '11.5px 20px'\n    | '13.5px 24px'\n    | '8.5px 28px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '15px 32px';\n      case 'web-small':\n        return '14.5px 28px';\n      case 'web-x-small':\n        return '10.5px 28px';\n      case 'web-xx-small':\n        return '8.5px 28px';\n      case 'web-xxx-small':\n        return '6.5px 28px';\n      case 'mobile-small':\n        return '11.5px 20px';\n      default:\n        return '13.5px 24px';\n    }\n  }\n\n  public get paddingSizeWithIcon():\n    | '14px'\n    | '12px'\n    | '8px'\n    | '6px'\n    | '4px'\n    | '10px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '14px';\n      case 'web-small':\n        return '12px';\n      case 'web-x-small':\n        return '8px';\n      case 'mobile-small':\n        return '8px';\n      case 'web-xx-small':\n        return '6px';\n      case 'web-xxx-small':\n        return '4px';\n      default:\n        return '10px';\n    }\n  }\n\n  public get borderColor(): '#2382F7' | '#F7941E' | '#FF0000' {\n    switch (this.color) {\n      case 'primary':\n        return '#2382F7';\n      case 'accent':\n        return '#F7941E';\n      default:\n        return '#FF0000';\n    }\n  }\n\n  public get lineHightSize(): '22px' | '19px' | '17px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '22px';\n      case 'mobile-small' || 'mobile-medium':\n        return '17px';\n      default:\n        return '19px';\n    }\n  }\n\n  public get fontSize(): '18px' | '16px' | '14px' | '10px 24px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '18px';\n      case 'mobile-small' || 'mobile-medium':\n        return '14px';\n      default:\n        return '16px';\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button-stroked.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 37
+                    }
+                },
+                "paddingSizeWithLable": {
+                    "name": "paddingSizeWithLable",
+                    "getSignature": {
+                        "name": "paddingSizeWithLable",
+                        "type": "",
+                        "returnType": "\"15px 32px\" | \"14.5px 28px\" | \"10.5px 28px\" | \"6.5px 28px\" | \"11.5px 20px\" | \"13.5px 24px\" | \"8.5px 28px\"",
+                        "line": 41
+                    }
+                },
+                "paddingSizeWithIcon": {
+                    "name": "paddingSizeWithIcon",
+                    "getSignature": {
+                        "name": "paddingSizeWithIcon",
+                        "type": "",
+                        "returnType": "\"14px\" | \"12px\" | \"8px\" | \"6px\" | \"4px\" | \"10px\"",
+                        "line": 67
+                    }
+                },
+                "borderColor": {
+                    "name": "borderColor",
+                    "getSignature": {
+                        "name": "borderColor",
+                        "type": "",
+                        "returnType": "\"#2382F7\" | \"#F7941E\" | \"#FF0000\"",
+                        "line": 92
+                    }
+                },
+                "lineHightSize": {
+                    "name": "lineHightSize",
+                    "getSignature": {
+                        "name": "lineHightSize",
+                        "type": "",
+                        "returnType": "\"22px\" | \"19px\" | \"17px\"",
+                        "line": 103
+                    }
+                },
+                "fontSize": {
+                    "name": "fontSize",
+                    "getSignature": {
+                        "name": "fontSize",
+                        "type": "",
+                        "returnType": "\"18px\" | \"16px\" | \"14px\" | \"10px 24px\"",
+                        "line": 114
+                    }
+                }
+            },
+            "templateData": "<button\n  mat-stroked-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize,\n    'border-color': borderColor\n  }\"\n  (click)=\"onEventChange($event)\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
         },
         {
             "name": "HeaderComponent",
@@ -503,13 +839,13 @@
     "modules": [
         {
             "name": "PatternLibModule",
-            "id": "module-PatternLibModule-2687daa4a86246b38b2b5bda6630d97f77389f29c1c27f48a41cfada39cc4deabb001a802f872413d5c71715d5c6b96761f05c427cc0428f72ce161cbfd47edf",
+            "id": "module-PatternLibModule-7ebf9effd47ce581472b5d40e32a4f9fb96236463e3dc8fb51be626da5d3619026596e85e04ad6315695ad898ab92c1b9d6f1796a15270798240ba79439c13b2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/pattern-lib/src/lib/pattern-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\nimport { ButtonSemiRoundedComponent } from './button-semi-rounded/button-semi-rounded.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { CommonModule } from '@angular/common';\n\n@NgModule({\n  declarations: [PatternLibComponent, ButtonSemiRoundedComponent],\n  imports: [MatButtonModule, CommonModule],\n  exports: [PatternLibComponent, ButtonSemiRoundedComponent],\n})\nexport class PatternLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n  ],\n  imports: [MatButtonModule, CommonModule, MatIconModule],\n  exports: [PatternLibComponent, ButtonFlatComponent],\n})\nexport class PatternLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -519,7 +855,10 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "ButtonSemiRoundedComponent"
+                            "name": "ButtonFlatComponent"
+                        },
+                        {
+                            "name": "ButtonStrokedComponent"
                         },
                         {
                             "name": "PatternLibComponent"
@@ -534,7 +873,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "ButtonSemiRoundedComponent"
+                            "name": "ButtonFlatComponent"
                         },
                         {
                             "name": "PatternLibComponent"
@@ -555,16 +894,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Basic",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/ButtonSemiRounded.stories.tsx",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -573,6 +902,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Flat",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ButtonFlat.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Large",
@@ -664,6 +1003,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Stroked",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ButtonStroked.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/ButtonFlat.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonFlatComponent>",
+                "defaultValue": "(args: ButtonFlatComponent) => ({\n  component: ButtonFlatComponent,\n  props: args,\n})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -677,11 +1036,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/ButtonSemiRounded.stories.tsx",
+                "file": "stories/ButtonStroked.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonSemiRoundedComponent>",
-                "defaultValue": "(\n  args: ButtonSemiRoundedComponent\n) => ({\n  component: ButtonSemiRoundedComponent,\n  props: args,\n})"
+                "type": "Story<ButtonStrokedComponent>",
+                "defaultValue": "(\n  args: ButtonStrokedComponent\n) => ({\n  component: ButtonStrokedComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -708,28 +1067,6 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "stories/ButtonSemiRounded.stories.tsx": [
-                {
-                    "name": "Basic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ButtonSemiRounded.stories.tsx",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/ButtonSemiRounded.stories.tsx",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonSemiRoundedComponent>",
-                    "defaultValue": "(\n  args: ButtonSemiRoundedComponent\n) => ({\n  component: ButtonSemiRoundedComponent,\n  props: args,\n})"
-                }
-            ],
             "projects/pattern-lib/src/test.ts": [
                 {
                     "name": "context",
@@ -749,6 +1086,28 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
+                }
+            ],
+            "stories/ButtonFlat.stories.tsx": [
+                {
+                    "name": "Flat",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ButtonFlat.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ButtonFlat.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonFlatComponent>",
+                    "defaultValue": "(args: ButtonFlatComponent) => ({\n  component: ButtonFlatComponent,\n  props: args,\n})"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -866,6 +1225,28 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "stories/ButtonStroked.stories.tsx": [
+                {
+                    "name": "Stroked",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ButtonStroked.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/ButtonStroked.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonStrokedComponent>",
+                    "defaultValue": "(\n  args: ButtonStrokedComponent\n) => ({\n  component: ButtonStrokedComponent,\n  props: args,\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -878,12 +1259,21 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/pattern-lib/src/lib/button-semi-rounded/button-semi-rounded.component.ts",
+                "filePath": "projects/pattern-lib/src/lib/button-flat/button-flat.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ButtonSemiRoundedComponent",
+                "name": "ButtonFlatComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/button-stroked/button-stroked.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonStrokedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -975,17 +1365,37 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/ButtonSemiRounded.stories.tsx",
+                "filePath": "stories/ButtonFlat.stories.tsx",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Basic",
+                "name": "Flat",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/ButtonSemiRounded.stories.tsx",
+                "filePath": "stories/ButtonFlat.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ButtonStroked.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Stroked",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/ButtonStroked.stories.tsx",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

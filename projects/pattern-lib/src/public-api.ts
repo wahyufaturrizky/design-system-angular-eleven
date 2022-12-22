@@ -5,4 +5,5 @@
 export * from './lib/pattern-lib.service';
 export * from './lib/pattern-lib.component';
 export * from './lib/pattern-lib.module';
-export * from './lib/button-semi-rounded/button-semi-rounded.component';
+export * from './lib/button-flat/button-flat.component';
+export * from './lib/button-stroked/button-stroked.component';
