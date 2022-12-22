@@ -11,10 +11,10 @@
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "build-lib": "ng build --project=pattern-lib && cd ./dist/pattern-lib && npm link",
+    "build-lib": "ng build --configuration production --project=pattern-lib && cd ./dist/pattern-lib && npm link",
     "homepage": "http://wahyufaturrizky.github.io/design-system-angular-eleven"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~11.2.14",
     "@angular/cdk": "^11.2.13",
