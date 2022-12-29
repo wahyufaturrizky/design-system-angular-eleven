@@ -13,6 +13,7 @@ import { ButtonStrokedComponent } from './button-stroked/button-stroked.componen
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
+import { InputTextAreaComponent } from './input-text-area/input-text-area.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { InputComponent } from './input/input.component';
     ButtonStrokedComponent,
     AutocompleteComponent,
     InputComponent,
+    InputTextAreaComponent,
   ],
   imports: [
     MatButtonModule,
