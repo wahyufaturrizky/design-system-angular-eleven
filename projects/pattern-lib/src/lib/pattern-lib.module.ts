@@ -7,6 +7,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { CommonModule } from '@angular/common';
 import { ButtonFlatComponent } from './button-flat/button-flat.component';
@@ -17,6 +18,7 @@ import { InputComponent } from './input/input.component';
 import { InputTextAreaComponent } from './input-text-area/input-text-area.component';
 import { TableComponent } from './table/table.component';
 import { MatSortModule } from '@angular/material/sort';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { MatSortModule } from '@angular/material/sort';
     InputComponent,
     InputTextAreaComponent,
     TableComponent,
+    PaginatorComponent,
   ],
   imports: [
     MatButtonModule,
@@ -39,6 +42,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatInputModule,
     MatTableModule,
     MatSortModule,
+    MatPaginatorModule,
   ],
   exports: [
     PatternLibComponent,

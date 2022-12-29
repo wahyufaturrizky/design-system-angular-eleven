@@ -11,10 +11,9 @@ export default {
   title: "ADL DESIGN SYSTEM/Table",
   component: TableComponent,
   argTypes: {
-    displayedColumns: { control: "text" },
     matSortDirection: {
       options: ["desc", "asc"],
-      matSortDirection: { type: "radio" },
+      control: { type: "radio" },
     },
     // we need to override here since in Angular it could be null as well (see button.component.ts) and therefore it would become an ambigious data type for storybook
   },
