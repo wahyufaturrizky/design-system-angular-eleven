@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 import { DisplayedColumnsInterface } from '../../interface/common';
 
 @Component({
