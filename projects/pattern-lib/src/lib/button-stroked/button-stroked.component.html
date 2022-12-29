@@ -11,6 +11,7 @@
     'border-color': borderColor
   }"
   (click)="onEventChange($event)"
+  [mat-dialog-close]="matDialogClose"
 >
   <mat-icon *ngIf="isIcon">{{ nameIcon }}</mat-icon> {{ isLabel ? label : "" }}
 </button>
