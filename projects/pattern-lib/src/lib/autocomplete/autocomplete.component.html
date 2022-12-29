@@ -1,0 +1,31 @@
+<mat-form-field
+  [color]="color"
+  [ngClass]="matFormFieldclasses"
+  [appearance]="appearance"
+  [floatLabel]="floatLabel"
+  [hideRequiredMarker]="hideRequiredMarker"
+  [hintLabel]="hintLabel"
+>
+  <mat-label>{{ label }}</mat-label>
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [ariaLabel]="ariaLabel"
+    matInput
+    [formControl]="myControl"
+    [matAutocomplete]="auto"
+    [required]="required"
+  />
+  <mat-autocomplete
+    (closed)="onClosed($event)"
+    (opened)="onOpened($event)"
+    (optionActivated)="onOptionActivated($event)"
+    (optionSelected)="onOptionSelected($event)"
+    autoActiveFirstOption
+    #auto="matAutocomplete"
+  >
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
