@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
 
 import { CommonModule } from '@angular/common';
 import { ButtonFlatComponent } from './button-flat/button-flat.component';
@@ -14,6 +15,8 @@ import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
 import { InputTextAreaComponent } from './input-text-area/input-text-area.component';
+import { TableComponent } from './table/table.component';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { InputTextAreaComponent } from './input-text-area/input-text-area.compon
     AutocompleteComponent,
     InputComponent,
     InputTextAreaComponent,
+    TableComponent,
   ],
   imports: [
     MatButtonModule,
@@ -33,6 +37,8 @@ import { InputTextAreaComponent } from './input-text-area/input-text-area.compon
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatTableModule,
+    MatSortModule,
   ],
   exports: [
     PatternLibComponent,

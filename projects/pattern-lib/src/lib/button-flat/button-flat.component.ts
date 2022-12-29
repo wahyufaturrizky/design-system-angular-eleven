@@ -13,7 +13,7 @@ export class ButtonFlatComponent implements OnInit {
   @Input() nameIcon: string | null = 'favorite';
   @Input() isIcon: boolean = false;
   @Input() isLabel: boolean = true;
-  @Input() customClasses: string | undefined;
+  @Input() customClasses: string[] = [''];
   @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';
   @Input() color: ThemePalette = 'primary';
   @Input() disabled: boolean = false;
@@ -35,7 +35,7 @@ export class ButtonFlatComponent implements OnInit {
   }
 
   public get classes(): string[] {
-    return [String(this.customClasses)];
+    return this.customClasses;
   }
 
   public get paddingSizeWithLable():

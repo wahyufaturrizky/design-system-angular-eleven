@@ -1,0 +1,31 @@
+<table
+  mat-table
+  [dataSource]="data"
+  [ngClass]="classes"
+  matSort
+  [matSortActive]="matSortActive"
+  matSortDisableClear
+  [matSortDirection]="matSortDirection"
+>
+  <ng-container
+    *ngFor="let coloumn of displayedColumns"
+    [matColumnDef]="coloumn.dataIndex"
+  >
+    <ng-container *ngIf="coloumn.sort">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>
+        {{ coloumn.title }}
+      </th></ng-container
+    >
+
+    <ng-container *ngIf="!coloumn.sort">
+      <th mat-header-cell *matHeaderCellDef>
+        {{ coloumn.title }}
+      </th></ng-container
+    >
+
+    <td mat-cell *matCellDef="let element">{{ element[coloumn.dataIndex] }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="dataIndexDisplayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: dataIndexDisplayedColumns"></tr>
+</table>
