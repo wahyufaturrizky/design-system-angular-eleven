@@ -12,6 +12,7 @@ export class ButtonFlatComponent implements OnInit {
   @Input() label: string | null = 'Text goes here';
   @Input() nameIcon: string | null = 'favorite';
   @Input() isIcon: boolean = false;
+  @Input() matDialogClose: boolean = false;
   @Input() isLabel: boolean = true;
   @Input() customClasses: string[] = [''];
   @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';

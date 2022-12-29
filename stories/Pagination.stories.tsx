@@ -1,7 +1,4 @@
-import { MatIconModule } from "@angular/material/icon";
 import { MatPaginatorModule } from "@angular/material/paginator";
-import { MatSortModule } from "@angular/material/sort";
-import { MatTableModule } from "@angular/material/table";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { moduleMetadata } from "@storybook/angular";
