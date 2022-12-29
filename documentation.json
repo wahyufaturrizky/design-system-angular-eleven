@@ -43,6 +43,201 @@
     "directives": [],
     "components": [
         {
+            "name": "AutocompleteComponent",
+            "id": "component-AutocompleteComponent-b595f07a4e4306aae8cf4eaa9a9200a9c4bf00f5a1617199777efc2d95b7ee4e4a4e95d5770c0166e0f1d61634ed111aac52c2c1e47cb9cb54375a8184305591",
+            "file": "projects/pattern-lib/src/lib/autocomplete/autocomplete.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-autocomplete",
+            "styleUrls": [
+                "./autocomplete.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./autocomplete.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "appearance",
+                    "defaultValue": "'fill'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "MatFormFieldAppearance",
+                    "decorators": []
+                },
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "classMatFormField",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Text goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "['One', 'Two', 'Three']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'placeholder goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "typeField",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "filteredOptions",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<string[]> | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "myControl",
+                    "defaultValue": "new FormControl('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "_filter",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string[]",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { typeField } from '../../interface/common';\nimport { map, startWith } from 'rxjs/operators';\nimport { FormControl } from '@angular/forms';\nimport { ThemePalette } from '@angular/material/core';\nimport { MatFormFieldAppearance } from '@angular/material/form-field';\n\n@Component({\n  selector: 'pl-autocomplete',\n  templateUrl: './autocomplete.component.html',\n  styleUrls: ['./autocomplete.component.scss'],\n})\nexport class AutocompleteComponent implements OnInit {\n  myControl = new FormControl('');\n\n  constructor() {}\n\n  filteredOptions: Observable<string[]> | undefined;\n\n  @Input() classMatFormField: string | undefined;\n  @Input() label: string = 'Text goes here';\n  @Input() color: ThemePalette = 'primary';\n  @Input() appearance: MatFormFieldAppearance = 'fill';\n  @Input() ariaLabel: string | undefined;\n  @Input() type: typeField = 'text';\n  @Input() options: string[] = ['One', 'Two', 'Three'];\n  @Input() placeholder: string = 'placeholder goes here';\n\n  ngOnInit(): void {\n    this.filteredOptions = this.myControl.valueChanges.pipe(\n      startWith(''),\n      map((value) => this._filter(value || ''))\n    );\n  }\n\n  private _filter(value: string): string[] {\n    const filterValue = value.toLowerCase();\n\n    return this.options.filter((option) =>\n      option.toLowerCase().includes(filterValue)\n    );\n  }\n\n  public get matFormFieldclasses(): string[] {\n    return [String(this.classMatFormField)];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./autocomplete.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "matFormFieldclasses": {
+                    "name": "matFormFieldclasses",
+                    "getSignature": {
+                        "name": "matFormFieldclasses",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 45
+                    }
+                }
+            },
+            "templateData": "<mat-form-field\n  [color]=\"color\"\n  [ngClass]=\"matFormFieldclasses\"\n  [appearance]=\"appearance\"\n>\n  <mat-label>{{ label }}</mat-label>\n  <input\n    [type]=\"type\"\n    [placeholder]=\"placeholder\"\n    [ariaLabel]=\"ariaLabel\"\n    matInput\n    [formControl]=\"myControl\"\n    [matAutocomplete]=\"auto\"\n  />\n  <mat-autocomplete autoActiveFirstOption #auto=\"matAutocomplete\">\n    <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\n      {{ option }}\n    </mat-option>\n  </mat-autocomplete>\n</mat-form-field>\n"
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
             "file": "stories/button.component.ts",
@@ -839,13 +1034,13 @@
     "modules": [
         {
             "name": "PatternLibModule",
-            "id": "module-PatternLibModule-7ebf9effd47ce581472b5d40e32a4f9fb96236463e3dc8fb51be626da5d3619026596e85e04ad6315695ad898ab92c1b9d6f1796a15270798240ba79439c13b2",
+            "id": "module-PatternLibModule-d3d63782fe691aff7f7e5e733baed4485b01f9fb7fe16870391dda81b23b677dd42506334a9d565a42ef59b30d53623979e39e0645f3c5062499918180a2a044",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/pattern-lib/src/lib/pattern-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n  ],\n  imports: [MatButtonModule, CommonModule, MatIconModule],\n  exports: [PatternLibComponent, ButtonFlatComponent],\n})\nexport class PatternLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\nimport { AutocompleteComponent } from './autocomplete/autocomplete.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n    AutocompleteComponent,\n  ],\n  imports: [\n    MatButtonModule,\n    CommonModule,\n    MatIconModule,\n    MatAutocompleteModule,\n    MatFormFieldModule,\n    FormsModule,\n    ReactiveFormsModule,\n    MatInputModule,\n  ],\n  exports: [PatternLibComponent, ButtonFlatComponent],\n})\nexport class PatternLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -854,6 +1049,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "AutocompleteComponent"
+                        },
                         {
                             "name": "ButtonFlatComponent"
                         },
@@ -893,6 +1091,16 @@
     ],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/AutoComplete.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
             {
                 "name": "context",
                 "ctype": "miscellaneous",
@@ -1016,11 +1224,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/ButtonFlat.stories.tsx",
+                "file": "stories/AutoComplete.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonFlatComponent>",
-                "defaultValue": "(args: ButtonFlatComponent) => ({\n  component: ButtonFlatComponent,\n  props: args,\n})"
+                "type": "Story<AutocompleteComponent>",
+                "defaultValue": "(\n  args: AutocompleteComponent\n) => ({\n  component: AutocompleteComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1056,6 +1264,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/ButtonFlat.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonFlatComponent>",
+                "defaultValue": "(args: ButtonFlatComponent) => ({\n  component: ButtonFlatComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1064,9 +1282,43 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "typeField",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"button\" | \"text\" | \"checkbox\" | \"color\" | \"date\" | \"datetime-local\" | \"email\" | \"file\" | \"hidden\" | \"image\" | \"month\" | \"number\" | \"password\" | \"radio\" | \"range\" | \"reset\" | \"search\" | \"submit\" | \"text\" | \"time\" | \"tel\" | \"url\" | \"week\"",
+                "file": "projects/pattern-lib/src/interface/common.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
+            "stories/AutoComplete.stories.tsx": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/AutoComplete.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/AutoComplete.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<AutocompleteComponent>",
+                    "defaultValue": "(\n  args: AutocompleteComponent\n) => ({\n  component: AutocompleteComponent,\n  props: args,\n})"
+                }
+            ],
             "projects/pattern-lib/src/test.ts": [
                 {
                     "name": "context",
@@ -1251,13 +1503,36 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "projects/pattern-lib/src/interface/common.ts": [
+                {
+                    "name": "typeField",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"button\" | \"text\" | \"checkbox\" | \"color\" | \"date\" | \"datetime-local\" | \"email\" | \"file\" | \"hidden\" | \"image\" | \"month\" | \"number\" | \"password\" | \"radio\" | \"range\" | \"reset\" | \"search\" | \"submit\" | \"text\" | \"time\" | \"tel\" | \"url\" | \"week\"",
+                    "file": "projects/pattern-lib/src/interface/common.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 2,
         "status": "low",
         "files": [
+            {
+                "filePath": "projects/pattern-lib/src/lib/autocomplete/autocomplete.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AutocompleteComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
             {
                 "filePath": "projects/pattern-lib/src/lib/button-flat/button-flat.component.ts",
                 "type": "component",
@@ -1310,6 +1585,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/AutoComplete.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/AutoComplete.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
