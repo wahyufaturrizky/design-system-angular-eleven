@@ -2,6 +2,47 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "DisplayedColumnsInterface",
+            "id": "interface-DisplayedColumnsInterface-aa50c09f43a6d219def6d36a417e846d66a1a15a273ceb7cfb1f98a95ca8ca46fa3d24faf5fc653612b9bbd885d2b13570b45a0d9527d71c1078baf5949230b1",
+            "file": "projects/pattern-lib/src/interface/common.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export type typeField =\n  | 'button'\n  | 'text'\n  | 'checkbox'\n  | 'color'\n  | 'date'\n  | 'datetime-local'\n  | 'email'\n  | 'file'\n  | 'hidden'\n  | 'image'\n  | 'month'\n  | 'number'\n  | 'password'\n  | 'radio'\n  | 'range'\n  | 'reset'\n  | 'search'\n  | 'submit'\n  | 'text'\n  | 'time'\n  | 'tel'\n  | 'url'\n  | 'week';\n\nexport interface DisplayedColumnsInterface {\n  sort: boolean;\n  dataIndex: string;\n  title: string;\n}\n",
+            "properties": [
+                {
+                    "name": "dataIndex",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "sort",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "User",
             "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
             "file": "stories/User.ts",
@@ -44,7 +85,7 @@
     "components": [
         {
             "name": "AutocompleteComponent",
-            "id": "component-AutocompleteComponent-b595f07a4e4306aae8cf4eaa9a9200a9c4bf00f5a1617199777efc2d95b7ee4e4a4e95d5770c0166e0f1d61634ed111aac52c2c1e47cb9cb54375a8184305591",
+            "id": "component-AutocompleteComponent-69998387b9613dfa9276e3f6b3917c47251fa5d649f420d0fb0098ed6c7c45ffd45f08e07599beb205163d9827a095efe0c79763237e73f3a48dd4f400c2c44d",
             "file": "projects/pattern-lib/src/lib/autocomplete/autocomplete.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -66,7 +107,7 @@
                     "defaultValue": "'fill'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 29,
                     "type": "MatFormFieldAppearance",
                     "decorators": []
                 },
@@ -74,7 +115,7 @@
                     "name": "ariaLabel",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 33,
                     "type": "string | undefined",
                     "decorators": []
                 },
@@ -82,7 +123,7 @@
                     "name": "classMatFormField",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 25,
                     "type": "string | undefined",
                     "decorators": []
                 },
@@ -91,8 +132,35 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 28,
                     "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "floatLabel",
+                    "defaultValue": "'auto'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "FloatLabelType",
+                    "decorators": []
+                },
+                {
+                    "name": "hideRequiredMarker",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hintLabel",
+                    "defaultValue": "'Hint label here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -100,7 +168,7 @@
                     "defaultValue": "'Text goes here'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 27,
                     "type": "string",
                     "decorators": []
                 },
@@ -109,17 +177,26 @@
                     "defaultValue": "['One', 'Two', 'Three']",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 35,
                     "type": "string[]",
                     "decorators": []
                 },
                 {
                     "name": "placeholder",
-                    "defaultValue": "'placeholder goes here'",
+                    "defaultValue": "'Placeholder goes here'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 36,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -127,12 +204,45 @@
                     "defaultValue": "'text'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 34,
                     "type": "typeField",
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "eventClose",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "EventEmitter<void>"
+                },
+                {
+                    "name": "eventOpened",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter<void>"
+                },
+                {
+                    "name": "eventOptionActivated",
+                    "defaultValue": "new EventEmitter<MatAutocompleteActivatedEvent>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter<MatAutocompleteActivatedEvent>"
+                },
+                {
+                    "name": "eventOptionSelected",
+                    "defaultValue": "new EventEmitter<MatAutocompleteActivatedEvent>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 42,
+                    "type": "EventEmitter<MatAutocompleteActivatedEvent>"
+                }
+            ],
             "propertiesClass": [
                 {
                     "name": "filteredOptions",
@@ -141,7 +251,7 @@
                     "type": "Observable<string[]> | undefined",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 23
                 },
                 {
                     "name": "myControl",
@@ -151,7 +261,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 19
                 }
             ],
             "methodsClass": [
@@ -168,7 +278,7 @@
                     "optional": false,
                     "returnType": "string[]",
                     "typeParameters": [],
-                    "line": 37,
+                    "line": 68,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -192,9 +302,121 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 45,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onClosed",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "void",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "void",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onOpened",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "void",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "void",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onOptionActivated",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MatAutocompleteActivatedEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 60,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MatAutocompleteActivatedEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onOptionSelected",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MatAutocompleteActivatedEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MatAutocompleteActivatedEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -204,7 +426,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { typeField } from '../../interface/common';\nimport { map, startWith } from 'rxjs/operators';\nimport { FormControl } from '@angular/forms';\nimport { ThemePalette } from '@angular/material/core';\nimport { MatFormFieldAppearance } from '@angular/material/form-field';\n\n@Component({\n  selector: 'pl-autocomplete',\n  templateUrl: './autocomplete.component.html',\n  styleUrls: ['./autocomplete.component.scss'],\n})\nexport class AutocompleteComponent implements OnInit {\n  myControl = new FormControl('');\n\n  constructor() {}\n\n  filteredOptions: Observable<string[]> | undefined;\n\n  @Input() classMatFormField: string | undefined;\n  @Input() label: string = 'Text goes here';\n  @Input() color: ThemePalette = 'primary';\n  @Input() appearance: MatFormFieldAppearance = 'fill';\n  @Input() ariaLabel: string | undefined;\n  @Input() type: typeField = 'text';\n  @Input() options: string[] = ['One', 'Two', 'Three'];\n  @Input() placeholder: string = 'placeholder goes here';\n\n  ngOnInit(): void {\n    this.filteredOptions = this.myControl.valueChanges.pipe(\n      startWith(''),\n      map((value) => this._filter(value || ''))\n    );\n  }\n\n  private _filter(value: string): string[] {\n    const filterValue = value.toLowerCase();\n\n    return this.options.filter((option) =>\n      option.toLowerCase().includes(filterValue)\n    );\n  }\n\n  public get matFormFieldclasses(): string[] {\n    return [String(this.classMatFormField)];\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { typeField } from '../../interface/common';\nimport { map, startWith } from 'rxjs/operators';\nimport { FormControl } from '@angular/forms';\nimport { ThemePalette } from '@angular/material/core';\nimport {\n  FloatLabelType,\n  MatFormFieldAppearance,\n} from '@angular/material/form-field';\nimport { MatAutocompleteActivatedEvent } from '@angular/material/autocomplete';\n\n@Component({\n  selector: 'pl-autocomplete',\n  templateUrl: './autocomplete.component.html',\n  styleUrls: ['./autocomplete.component.scss'],\n})\nexport class AutocompleteComponent implements OnInit {\n  myControl = new FormControl('');\n\n  constructor() {}\n\n  filteredOptions: Observable<string[]> | undefined;\n\n  @Input() classMatFormField: string | undefined;\n  @Input() hintLabel: string = 'Hint label here';\n  @Input() label: string = 'Text goes here';\n  @Input() color: ThemePalette = 'primary';\n  @Input() appearance: MatFormFieldAppearance = 'fill';\n  @Input() floatLabel: FloatLabelType = 'auto';\n  @Input() hideRequiredMarker: boolean = false;\n  @Input() required: boolean = false;\n  @Input() ariaLabel: string | undefined;\n  @Input() type: typeField = 'text';\n  @Input() options: string[] = ['One', 'Two', 'Three'];\n  @Input() placeholder: string = 'Placeholder goes here';\n\n  @Output() eventClose: EventEmitter<void> = new EventEmitter<void>();\n  @Output() eventOpened: EventEmitter<void> = new EventEmitter<void>();\n  @Output() eventOptionActivated: EventEmitter<MatAutocompleteActivatedEvent> =\n    new EventEmitter<MatAutocompleteActivatedEvent>();\n  @Output() eventOptionSelected: EventEmitter<MatAutocompleteActivatedEvent> =\n    new EventEmitter<MatAutocompleteActivatedEvent>();\n\n  ngOnInit(): void {\n    this.filteredOptions = this.myControl.valueChanges.pipe(\n      startWith(''),\n      map((value) => this._filter(value || ''))\n    );\n  }\n\n  onClosed(event: void) {\n    this.eventClose.emit(event);\n  }\n\n  onOpened(event: void) {\n    this.eventOpened.emit(event);\n  }\n\n  onOptionActivated(event: MatAutocompleteActivatedEvent) {\n    this.eventOptionActivated.emit(event);\n  }\n\n  onOptionSelected(event: MatAutocompleteActivatedEvent) {\n    this.eventOptionSelected.emit(event);\n  }\n\n  private _filter(value: string): string[] {\n    const filterValue = value.toLowerCase();\n\n    return this.options.filter((option) =>\n      option.toLowerCase().includes(filterValue)\n    );\n  }\n\n  public get matFormFieldclasses(): string[] {\n    return [String(this.classMatFormField)];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -219,7 +441,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 19
             },
             "implements": [
                 "OnInit"
@@ -231,11 +453,11 @@
                         "name": "matFormFieldclasses",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 45
+                        "line": 76
                     }
                 }
             },
-            "templateData": "<mat-form-field\n  [color]=\"color\"\n  [ngClass]=\"matFormFieldclasses\"\n  [appearance]=\"appearance\"\n>\n  <mat-label>{{ label }}</mat-label>\n  <input\n    [type]=\"type\"\n    [placeholder]=\"placeholder\"\n    [ariaLabel]=\"ariaLabel\"\n    matInput\n    [formControl]=\"myControl\"\n    [matAutocomplete]=\"auto\"\n  />\n  <mat-autocomplete autoActiveFirstOption #auto=\"matAutocomplete\">\n    <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\n      {{ option }}\n    </mat-option>\n  </mat-autocomplete>\n</mat-form-field>\n"
+            "templateData": "<mat-form-field\n  [color]=\"color\"\n  [ngClass]=\"matFormFieldclasses\"\n  [appearance]=\"appearance\"\n  [floatLabel]=\"floatLabel\"\n  [hideRequiredMarker]=\"hideRequiredMarker\"\n  [hintLabel]=\"hintLabel\"\n>\n  <mat-label>{{ label }}</mat-label>\n  <input\n    [type]=\"type\"\n    [placeholder]=\"placeholder\"\n    [ariaLabel]=\"ariaLabel\"\n    matInput\n    [formControl]=\"myControl\"\n    [matAutocomplete]=\"auto\"\n    [required]=\"required\"\n  />\n  <mat-autocomplete\n    (closed)=\"onClosed($event)\"\n    (opened)=\"onOpened($event)\"\n    (optionActivated)=\"onOptionActivated($event)\"\n    (optionSelected)=\"onOptionSelected($event)\"\n    autoActiveFirstOption\n    #auto=\"matAutocomplete\"\n  >\n    <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\n      {{ option }}\n    </mat-option>\n  </mat-autocomplete>\n</mat-form-field>\n"
         },
         {
             "name": "ButtonComponent",
@@ -363,7 +585,7 @@
         },
         {
             "name": "ButtonFlatComponent",
-            "id": "component-ButtonFlatComponent-db1431be9886f4e9eee2728318ca87de8d412e4f40f0fbb339efaafc31abe9d1b30f086d93da80a2e7c7e872b51bae428032b8821a77fc1875b4970c6e654f60",
+            "id": "component-ButtonFlatComponent-7cf67d04e54b4738cfbb139161871642c26291a2d3c7211662a21c594681fd051b3f855ab3ff900aab6baf2c0a1365573b1c412c22396bcf4c373af204fe517f",
             "file": "projects/pattern-lib/src/lib/button-flat/button-flat.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -385,7 +607,7 @@
                     "defaultValue": "'semi-rounded'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "\"semi-rounded\" | \"rounded\"",
                     "decorators": []
                 },
@@ -394,16 +616,17 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "ThemePalette",
                     "decorators": []
                 },
                 {
                     "name": "customClasses",
+                    "defaultValue": "['']",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
-                    "type": "string | undefined",
+                    "line": 17,
+                    "type": "string[]",
                     "decorators": []
                 },
                 {
@@ -411,7 +634,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -429,7 +652,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -440,6 +663,15 @@
                     "deprecationMessage": "",
                     "line": 12,
                     "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "matDialogClose",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -456,7 +688,7 @@
                     "defaultValue": "'web-medium'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "\"mobile-small\" | \"mobile-medium\" | \"web-xxx-small\" | \"web-xx-small\" | \"web-x-small\" | \"web-small\" | \"web-medium\"",
                     "decorators": []
                 }
@@ -467,7 +699,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "EventEmitter<Event>"
                 }
             ],
@@ -479,7 +711,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -496,7 +728,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -519,7 +751,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-flat',\n  templateUrl: './button-flat.component.html',\n  styleUrls: ['./button-flat.component.scss'],\n})\nexport class ButtonFlatComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() nameIcon: string | null = 'favorite';\n  @Input() isIcon: boolean = false;\n  @Input() isLabel: boolean = true;\n  @Input() customClasses: string | undefined;\n  @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Input()\n  size:\n    | 'mobile-small'\n    | 'mobile-medium'\n    | 'web-xxx-small'\n    | 'web-xx-small'\n    | 'web-x-small'\n    | 'web-small'\n    | 'web-medium' = 'web-medium';\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n\n  public get classes(): string[] {\n    return [String(this.customClasses)];\n  }\n\n  public get paddingSizeWithLable():\n    | '15px 32px'\n    | '14.5px 28px'\n    | '10.5px 28px'\n    | '6.5px 28px'\n    | '11.5px 20px'\n    | '13.5px 24px'\n    | '8.5px 28px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '15px 32px';\n      case 'web-small':\n        return '14.5px 28px';\n      case 'web-x-small':\n        return '10.5px 28px';\n      case 'web-xx-small':\n        return '8.5px 28px';\n      case 'web-xxx-small':\n        return '6.5px 28px';\n      case 'mobile-small':\n        return '11.5px 20px';\n      default:\n        return '13.5px 24px';\n    }\n  }\n\n  public get paddingSizeWithIcon():\n    | '14px'\n    | '12px'\n    | '8px'\n    | '6px'\n    | '4px'\n    | '10px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '14px';\n      case 'web-small':\n        return '12px';\n      case 'web-x-small':\n        return '8px';\n      case 'mobile-small':\n        return '8px';\n      case 'web-xx-small':\n        return '6px';\n      case 'web-xxx-small':\n        return '4px';\n      default:\n        return '10px';\n    }\n  }\n\n  public get lineHightSize(): '22px' | '19px' | '17px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '22px';\n      case 'mobile-small' || 'mobile-medium':\n        return '17px';\n      default:\n        return '19px';\n    }\n  }\n\n  public get fontSize(): '18px' | '16px' | '14px' | '10px 24px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '18px';\n      case 'mobile-small' || 'mobile-medium':\n        return '14px';\n      default:\n        return '16px';\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-flat',\n  templateUrl: './button-flat.component.html',\n  styleUrls: ['./button-flat.component.scss'],\n})\nexport class ButtonFlatComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() nameIcon: string | null = 'favorite';\n  @Input() isIcon: boolean = false;\n  @Input() matDialogClose: boolean = false;\n  @Input() isLabel: boolean = true;\n  @Input() customClasses: string[] = [''];\n  @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Input()\n  size:\n    | 'mobile-small'\n    | 'mobile-medium'\n    | 'web-xxx-small'\n    | 'web-xx-small'\n    | 'web-x-small'\n    | 'web-small'\n    | 'web-medium' = 'web-medium';\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n\n  public get classes(): string[] {\n    return this.customClasses;\n  }\n\n  public get paddingSizeWithLable():\n    | '15px 32px'\n    | '14.5px 28px'\n    | '10.5px 28px'\n    | '6.5px 28px'\n    | '11.5px 20px'\n    | '13.5px 24px'\n    | '8.5px 28px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '15px 32px';\n      case 'web-small':\n        return '14.5px 28px';\n      case 'web-x-small':\n        return '10.5px 28px';\n      case 'web-xx-small':\n        return '8.5px 28px';\n      case 'web-xxx-small':\n        return '6.5px 28px';\n      case 'mobile-small':\n        return '11.5px 20px';\n      default:\n        return '13.5px 24px';\n    }\n  }\n\n  public get paddingSizeWithIcon():\n    | '14px'\n    | '12px'\n    | '8px'\n    | '6px'\n    | '4px'\n    | '10px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '14px';\n      case 'web-small':\n        return '12px';\n      case 'web-x-small':\n        return '8px';\n      case 'mobile-small':\n        return '8px';\n      case 'web-xx-small':\n        return '6px';\n      case 'web-xxx-small':\n        return '4px';\n      default:\n        return '10px';\n    }\n  }\n\n  public get lineHightSize(): '22px' | '19px' | '17px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '22px';\n      case 'mobile-small' || 'mobile-medium':\n        return '17px';\n      default:\n        return '19px';\n    }\n  }\n\n  public get fontSize(): '18px' | '16px' | '14px' | '10px 24px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '18px';\n      case 'mobile-small' || 'mobile-medium':\n        return '14px';\n      default:\n        return '16px';\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -546,7 +778,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 37
+                        "line": 38
                     }
                 },
                 "paddingSizeWithLable": {
@@ -555,7 +787,7 @@
                         "name": "paddingSizeWithLable",
                         "type": "",
                         "returnType": "\"15px 32px\" | \"14.5px 28px\" | \"10.5px 28px\" | \"6.5px 28px\" | \"11.5px 20px\" | \"13.5px 24px\" | \"8.5px 28px\"",
-                        "line": 41
+                        "line": 42
                     }
                 },
                 "paddingSizeWithIcon": {
@@ -564,7 +796,7 @@
                         "name": "paddingSizeWithIcon",
                         "type": "",
                         "returnType": "\"14px\" | \"12px\" | \"8px\" | \"6px\" | \"4px\" | \"10px\"",
-                        "line": 67
+                        "line": 68
                     }
                 },
                 "lineHightSize": {
@@ -573,7 +805,7 @@
                         "name": "lineHightSize",
                         "type": "",
                         "returnType": "\"22px\" | \"19px\" | \"17px\"",
-                        "line": 92
+                        "line": 93
                     }
                 },
                 "fontSize": {
@@ -582,15 +814,15 @@
                         "name": "fontSize",
                         "type": "",
                         "returnType": "\"18px\" | \"16px\" | \"14px\" | \"10px 24px\"",
-                        "line": 103
+                        "line": 104
                     }
                 }
             },
-            "templateData": "<button\n  mat-flat-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize\n  }\"\n  (click)=\"onEventChange($event)\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
+            "templateData": "<button\n  mat-flat-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize\n  }\"\n  (click)=\"onEventChange($event)\"\n  [mat-dialog-close]=\"matDialogClose\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
         },
         {
             "name": "ButtonStrokedComponent",
-            "id": "component-ButtonStrokedComponent-0e39518394ba456417b1c23769ac6660179f07dec08a1c5feaf7bf1bc337eae068dc51e8a3fdaabbbafd6d8210522a30df1aa0bbdb6535832c2ae481e505db5e",
+            "id": "component-ButtonStrokedComponent-31ea0ac7620c392cb1a77ff2217eb68f1de6d6a90aed90b8284e715a46c06f3362c898ec94f55191f7a259b3cf1899c8abb2475af8fc4f0d82722736ea3522d0",
             "file": "projects/pattern-lib/src/lib/button-stroked/button-stroked.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -612,7 +844,7 @@
                     "defaultValue": "'semi-rounded'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 18,
                     "type": "\"semi-rounded\" | \"rounded\"",
                     "decorators": []
                 },
@@ -621,16 +853,17 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 19,
                     "type": "ThemePalette",
                     "decorators": []
                 },
                 {
                     "name": "customClasses",
+                    "defaultValue": "['']",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
-                    "type": "string | undefined",
+                    "line": 17,
+                    "type": "string[]",
                     "decorators": []
                 },
                 {
@@ -638,7 +871,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -656,7 +889,7 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -667,6 +900,15 @@
                     "deprecationMessage": "",
                     "line": 12,
                     "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "matDialogClose",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -683,7 +925,7 @@
                     "defaultValue": "'web-medium'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "\"mobile-small\" | \"mobile-medium\" | \"web-xxx-small\" | \"web-xx-small\" | \"web-x-small\" | \"web-small\" | \"web-medium\"",
                     "decorators": []
                 }
@@ -694,7 +936,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "EventEmitter<Event>"
                 }
             ],
@@ -706,7 +948,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -723,7 +965,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -746,7 +988,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-stroked',\n  templateUrl: './button-stroked.component.html',\n  styleUrls: ['./button-stroked.component.scss'],\n})\nexport class ButtonStrokedComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() nameIcon: string | null = 'favorite';\n  @Input() isIcon: boolean = false;\n  @Input() isLabel: boolean = true;\n  @Input() customClasses: string | undefined;\n  @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Input()\n  size:\n    | 'mobile-small'\n    | 'mobile-medium'\n    | 'web-xxx-small'\n    | 'web-xx-small'\n    | 'web-x-small'\n    | 'web-small'\n    | 'web-medium' = 'web-medium';\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n\n  public get classes(): string[] {\n    return [String(this.customClasses)];\n  }\n\n  public get paddingSizeWithLable():\n    | '15px 32px'\n    | '14.5px 28px'\n    | '10.5px 28px'\n    | '6.5px 28px'\n    | '11.5px 20px'\n    | '13.5px 24px'\n    | '8.5px 28px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '15px 32px';\n      case 'web-small':\n        return '14.5px 28px';\n      case 'web-x-small':\n        return '10.5px 28px';\n      case 'web-xx-small':\n        return '8.5px 28px';\n      case 'web-xxx-small':\n        return '6.5px 28px';\n      case 'mobile-small':\n        return '11.5px 20px';\n      default:\n        return '13.5px 24px';\n    }\n  }\n\n  public get paddingSizeWithIcon():\n    | '14px'\n    | '12px'\n    | '8px'\n    | '6px'\n    | '4px'\n    | '10px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '14px';\n      case 'web-small':\n        return '12px';\n      case 'web-x-small':\n        return '8px';\n      case 'mobile-small':\n        return '8px';\n      case 'web-xx-small':\n        return '6px';\n      case 'web-xxx-small':\n        return '4px';\n      default:\n        return '10px';\n    }\n  }\n\n  public get borderColor(): '#2382F7' | '#F7941E' | '#FF0000' {\n    switch (this.color) {\n      case 'primary':\n        return '#2382F7';\n      case 'accent':\n        return '#F7941E';\n      default:\n        return '#FF0000';\n    }\n  }\n\n  public get lineHightSize(): '22px' | '19px' | '17px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '22px';\n      case 'mobile-small' || 'mobile-medium':\n        return '17px';\n      default:\n        return '19px';\n    }\n  }\n\n  public get fontSize(): '18px' | '16px' | '14px' | '10px 24px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '18px';\n      case 'mobile-small' || 'mobile-medium':\n        return '14px';\n      default:\n        return '16px';\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-button-stroked',\n  templateUrl: './button-stroked.component.html',\n  styleUrls: ['./button-stroked.component.scss'],\n})\nexport class ButtonStrokedComponent implements OnInit {\n  constructor() {}\n\n  @Input() label: string | null = 'Text goes here';\n  @Input() nameIcon: string | null = 'favorite';\n  @Input() isIcon: boolean = false;\n  @Input() matDialogClose: boolean = false;\n  @Input() isLabel: boolean = true;\n  @Input() customClasses: string[] = [''];\n  @Input() borderType: 'semi-rounded' | 'rounded' = 'semi-rounded';\n  @Input() color: ThemePalette = 'primary';\n  @Input() disabled: boolean = false;\n  @Input()\n  size:\n    | 'mobile-small'\n    | 'mobile-medium'\n    | 'web-xxx-small'\n    | 'web-xx-small'\n    | 'web-x-small'\n    | 'web-small'\n    | 'web-medium' = 'web-medium';\n  @Output() eventChange: EventEmitter<Event> = new EventEmitter<Event>();\n\n  ngOnInit(): void {}\n\n  onEventChange(event: Event) {\n    this.eventChange.emit(event);\n  }\n\n  public get classes(): string[] {\n    return this.customClasses;\n  }\n\n  public get paddingSizeWithLable():\n    | '15px 32px'\n    | '14.5px 28px'\n    | '10.5px 28px'\n    | '6.5px 28px'\n    | '11.5px 20px'\n    | '13.5px 24px'\n    | '8.5px 28px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '15px 32px';\n      case 'web-small':\n        return '14.5px 28px';\n      case 'web-x-small':\n        return '10.5px 28px';\n      case 'web-xx-small':\n        return '8.5px 28px';\n      case 'web-xxx-small':\n        return '6.5px 28px';\n      case 'mobile-small':\n        return '11.5px 20px';\n      default:\n        return '13.5px 24px';\n    }\n  }\n\n  public get paddingSizeWithIcon():\n    | '14px'\n    | '12px'\n    | '8px'\n    | '6px'\n    | '4px'\n    | '10px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '14px';\n      case 'web-small':\n        return '12px';\n      case 'web-x-small':\n        return '8px';\n      case 'mobile-small':\n        return '8px';\n      case 'web-xx-small':\n        return '6px';\n      case 'web-xxx-small':\n        return '4px';\n      default:\n        return '10px';\n    }\n  }\n\n  public get borderColor(): '#2382F7' | '#F7941E' | '#FF0000' {\n    switch (this.color) {\n      case 'primary':\n        return '#2382F7';\n      case 'accent':\n        return '#F7941E';\n      default:\n        return '#FF0000';\n    }\n  }\n\n  public get lineHightSize(): '22px' | '19px' | '17px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '22px';\n      case 'mobile-small' || 'mobile-medium':\n        return '17px';\n      default:\n        return '19px';\n    }\n  }\n\n  public get fontSize(): '18px' | '16px' | '14px' | '10px 24px' {\n    switch (this.size) {\n      case 'web-medium':\n        return '18px';\n      case 'mobile-small' || 'mobile-medium':\n        return '14px';\n      default:\n        return '16px';\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -773,7 +1015,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 37
+                        "line": 38
                     }
                 },
                 "paddingSizeWithLable": {
@@ -782,7 +1024,7 @@
                         "name": "paddingSizeWithLable",
                         "type": "",
                         "returnType": "\"15px 32px\" | \"14.5px 28px\" | \"10.5px 28px\" | \"6.5px 28px\" | \"11.5px 20px\" | \"13.5px 24px\" | \"8.5px 28px\"",
-                        "line": 41
+                        "line": 42
                     }
                 },
                 "paddingSizeWithIcon": {
@@ -791,7 +1033,7 @@
                         "name": "paddingSizeWithIcon",
                         "type": "",
                         "returnType": "\"14px\" | \"12px\" | \"8px\" | \"6px\" | \"4px\" | \"10px\"",
-                        "line": 67
+                        "line": 68
                     }
                 },
                 "borderColor": {
@@ -800,7 +1042,7 @@
                         "name": "borderColor",
                         "type": "",
                         "returnType": "\"#2382F7\" | \"#F7941E\" | \"#FF0000\"",
-                        "line": 92
+                        "line": 93
                     }
                 },
                 "lineHightSize": {
@@ -809,7 +1051,7 @@
                         "name": "lineHightSize",
                         "type": "",
                         "returnType": "\"22px\" | \"19px\" | \"17px\"",
-                        "line": 103
+                        "line": 104
                     }
                 },
                 "fontSize": {
@@ -818,11 +1060,198 @@
                         "name": "fontSize",
                         "type": "",
                         "returnType": "\"18px\" | \"16px\" | \"14px\" | \"10px 24px\"",
-                        "line": 114
+                        "line": 115
                     }
                 }
             },
-            "templateData": "<button\n  mat-stroked-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize,\n    'border-color': borderColor\n  }\"\n  (click)=\"onEventChange($event)\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
+            "templateData": "<button\n  mat-stroked-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize,\n    'border-color': borderColor\n  }\"\n  (click)=\"onEventChange($event)\"\n  [mat-dialog-close]=\"matDialogClose\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
+        },
+        {
+            "name": "DialogComponent",
+            "id": "component-DialogComponent-035c9962026a14da3a58d90438de7d5bf58a76a599fe48b167f1e313250e97f0056adfab09c8587edd85afb6538c354988ea6a4b11d6f7982e9e314d85cbc820",
+            "file": "projects/pattern-lib/src/lib/dialog/dialog.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-dialog",
+            "styleUrls": [
+                "./dialog.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dialog.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "eventChangePrimary",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter<Event>"
+                },
+                {
+                    "name": "eventChangeSecondary",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "EventEmitter<Event>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "decorators": [
+                        {
+                            "name": "Inject",
+                            "stringifiedArguments": "MAT_DIALOG_DATA"
+                        }
+                    ],
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onEventChangePrimary",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onEventChangeSecondary",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';\nimport { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';\n\n@Component({\n  selector: 'pl-dialog',\n  templateUrl: './dialog.component.html',\n  styleUrls: ['./dialog.component.scss'],\n})\nexport class DialogComponent implements OnInit {\n  @Output() eventChangeSecondary: EventEmitter<Event> =\n    new EventEmitter<Event>();\n  @Output() eventChangePrimary: EventEmitter<Event> = new EventEmitter<Event>();\n\n  constructor(\n    private dialogRef: MatDialogRef<DialogComponent>,\n    @Inject(MAT_DIALOG_DATA) public data: any\n  ) {}\n\n  onEventChangeSecondary(event: Event) {\n    this.eventChangeSecondary.emit(event);\n    this.dialogRef.close();\n  }\n\n  onEventChangePrimary(event: Event) {\n    this.eventChangePrimary.emit(event);\n    this.dialogRef.close();\n  }\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./dialog.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<DialogComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "dialogRef",
+                        "type": "MatDialogRef<DialogComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h2 mat-dialog-title>{{ data.title }}</h2>\n<mat-dialog-content>\n  {{ data.content }}\n</mat-dialog-content>\n<mat-dialog-actions align=\"end\">\n  <button mat-stroked-button (click)=\"onEventChangeSecondary($event)\">\n    {{ data.labelButtonSecondary }}\n  </button>\n\n  <button\n    color=\"primary\"\n    (click)=\"onEventChangePrimary($event)\"\n    mat-flat-button\n  >\n    {{ data.labelButtonPrimary }}\n  </button>\n</mat-dialog-actions>\n"
         },
         {
             "name": "HeaderComponent",
@@ -896,6 +1325,510 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-f5c81a8f36ffc13441b10570b851617fb2e1891ad4a254b20060e0788d097d8e2ec80ef6726d2c561e0de4a74471dadd265bb9db4256c92b2f8dc0aeaaa501bf",
+            "file": "projects/pattern-lib/src/lib/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-input",
+            "styleUrls": [
+                "./input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "appearance",
+                    "defaultValue": "'fill'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "MatFormFieldAppearance",
+                    "decorators": []
+                },
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "colorPrefix",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "colorSuffix",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "customClasses",
+                    "defaultValue": "['']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "floatLabel",
+                    "defaultValue": "'auto'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "FloatLabelType",
+                    "decorators": []
+                },
+                {
+                    "name": "formControl",
+                    "defaultValue": "new FormControl('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "FormControl",
+                    "decorators": []
+                },
+                {
+                    "name": "hideRequiredMarker",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hintLabel",
+                    "defaultValue": "'Hint label here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Text goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxLength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string | number | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "minlength",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "string | number",
+                    "decorators": []
+                },
+                {
+                    "name": "namePrefixIcon",
+                    "defaultValue": "'tune'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "nameSuffixesIcon",
+                    "defaultValue": "'search'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Placeholder goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "typeField",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { FormControl } from '@angular/forms';\nimport { ThemePalette } from '@angular/material/core';\nimport {\n  FloatLabelType,\n  MatFormFieldAppearance,\n} from '@angular/material/form-field';\nimport { typeField } from '../../interface/common';\n\n@Component({\n  selector: 'pl-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss'],\n})\nexport class InputComponent implements OnInit {\n  @Input() customClasses: string[] = [''];\n  @Input() color: ThemePalette = 'primary';\n  @Input() colorSuffix: ThemePalette = 'primary';\n  @Input() colorPrefix: ThemePalette = 'primary';\n  @Input() appearance: MatFormFieldAppearance = 'fill';\n  @Input() floatLabel: FloatLabelType = 'auto';\n  @Input() hideRequiredMarker: boolean = false;\n  @Input() hintLabel: string = 'Hint label here';\n  @Input() label: string = 'Text goes here';\n  @Input() type: typeField = 'text';\n  @Input() placeholder: string = 'Placeholder goes here';\n  @Input() ariaLabel: string | undefined;\n  @Input() formControl: FormControl = new FormControl('');\n  @Input() maxLength: string | number | undefined;\n  @Input() minlength: string | number = 0;\n  @Input() required: boolean = false;\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() nameSuffixesIcon: string | null = 'search';\n  @Input() namePrefixIcon: string | null = 'tune';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  public get classes(): string[] {\n    return this.customClasses;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 35
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<mat-form-field\n  [ngClass]=\"classes\"\n  [color]=\"color\"\n  [appearance]=\"appearance\"\n  [floatLabel]=\"floatLabel\"\n  [hideRequiredMarker]=\"hideRequiredMarker\"\n  [hintLabel]=\"hintLabel\"\n>\n  <mat-label>{{ label }}</mat-label>\n  <mat-icon *ngIf=\"namePrefixIcon\" [color]=\"colorPrefix\" matPrefix>{{\n    namePrefixIcon\n  }}</mat-icon>\n  <input\n    [type]=\"type\"\n    matInput\n    [placeholder]=\"placeholder\"\n    [ariaLabel]=\"ariaLabel\"\n    [required]=\"required\"\n    [disabled]=\"disabled\"\n    [readonly]=\"readonly\"\n    [formControl]=\"formControl\"\n    [maxLength]=\"maxLength\"\n    [minlength]=\"minlength\"\n  />\n  <mat-icon *ngIf=\"nameSuffixesIcon\" [color]=\"colorSuffix\" matSuffix>{{\n    nameSuffixesIcon\n  }}</mat-icon>\n</mat-form-field>\n"
+        },
+        {
+            "name": "InputTextAreaComponent",
+            "id": "component-InputTextAreaComponent-4818f76d67023a2fb8c4ea23ebee6a6e6b340f3cfdfa175ec0a23aecba83d2878acef87d779db4d12818a079dfb8fc878dc5196fae688ee971df75d1b2b8555e",
+            "file": "projects/pattern-lib/src/lib/input-text-area/input-text-area.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-input-text-area",
+            "styleUrls": [
+                "./input-text-area.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input-text-area.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "appearance",
+                    "defaultValue": "'fill'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "MatFormFieldAppearance",
+                    "decorators": []
+                },
+                {
+                    "name": "ariaLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "colorPrefix",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "colorSuffix",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "ThemePalette",
+                    "decorators": []
+                },
+                {
+                    "name": "customClasses",
+                    "defaultValue": "['']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "floatLabel",
+                    "defaultValue": "'auto'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "FloatLabelType",
+                    "decorators": []
+                },
+                {
+                    "name": "formControl",
+                    "defaultValue": "new FormControl('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "FormControl",
+                    "decorators": []
+                },
+                {
+                    "name": "hideRequiredMarker",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hintLabel",
+                    "defaultValue": "'Hint label here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Text goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxLength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "string | number | undefined",
+                    "decorators": []
+                },
+                {
+                    "name": "minlength",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 32,
+                    "type": "string | number",
+                    "decorators": []
+                },
+                {
+                    "name": "namePrefixIcon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "nameSuffixesIcon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string | null",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Placeholder goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "readonly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 33,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "typeField",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { FormControl } from '@angular/forms';\nimport { ThemePalette } from '@angular/material/core';\nimport {\n  FloatLabelType,\n  MatFormFieldAppearance,\n} from '@angular/material/form-field';\nimport { typeField } from '../../interface/common';\n\n@Component({\n  selector: 'pl-input-text-area',\n  templateUrl: './input-text-area.component.html',\n  styleUrls: ['./input-text-area.component.scss'],\n})\nexport class InputTextAreaComponent implements OnInit {\n  constructor() {}\n\n  @Input() customClasses: string[] = [''];\n  @Input() color: ThemePalette = 'primary';\n  @Input() colorSuffix: ThemePalette = 'primary';\n  @Input() colorPrefix: ThemePalette = 'primary';\n  @Input() appearance: MatFormFieldAppearance = 'fill';\n  @Input() floatLabel: FloatLabelType = 'auto';\n  @Input() hideRequiredMarker: boolean = false;\n  @Input() hintLabel: string = 'Hint label here';\n  @Input() label: string = 'Text goes here';\n  @Input() type: typeField = 'text';\n  @Input() placeholder: string = 'Placeholder goes here';\n  @Input() ariaLabel: string | undefined;\n  @Input() formControl: FormControl = new FormControl('');\n  @Input() maxLength: string | number | undefined;\n  @Input() minlength: string | number = 0;\n  @Input() required: boolean = false;\n  @Input() disabled: boolean = false;\n  @Input() readonly: boolean = false;\n  @Input() nameSuffixesIcon: string | null = '';\n  @Input() namePrefixIcon: string | null = '';\n\n  public get classes(): string[] {\n    return this.customClasses;\n  }\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./input-text-area.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 39
+                    }
+                }
+            },
+            "templateData": "<mat-form-field\n  [ngClass]=\"classes\"\n  [color]=\"color\"\n  [appearance]=\"appearance\"\n  [floatLabel]=\"floatLabel\"\n  [hideRequiredMarker]=\"hideRequiredMarker\"\n  [hintLabel]=\"hintLabel\"\n>\n  <mat-label>{{ label }}</mat-label>\n  <mat-icon *ngIf=\"namePrefixIcon\" [color]=\"colorPrefix\" matPrefix>{{\n    namePrefixIcon\n  }}</mat-icon>\n\n  <textarea\n    [type]=\"type\"\n    matInput\n    [placeholder]=\"placeholder\"\n    [ariaLabel]=\"ariaLabel\"\n    [required]=\"required\"\n    [disabled]=\"disabled\"\n    [readonly]=\"readonly\"\n    [formControl]=\"formControl\"\n    [maxLength]=\"maxLength\"\n    [minlength]=\"minlength\"\n  ></textarea>\n\n  <mat-icon *ngIf=\"nameSuffixesIcon\" [color]=\"colorSuffix\" matSuffix>{{\n    nameSuffixesIcon\n  }}</mat-icon>\n</mat-form-field>\n"
         },
         {
             "name": "PageComponent",
@@ -978,6 +1911,236 @@
             "stylesData": ""
         },
         {
+            "name": "PaginatorComponent",
+            "id": "component-PaginatorComponent-58680cf0b355cb7521778e4fd9f09223b03132719ca82bd302a4b85cadcfcf44c828c957e7cc62a796f7e40deffe32227f53aabc6fa6581569bc8d4d497540a0",
+            "file": "projects/pattern-lib/src/lib/paginator/paginator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-paginator",
+            "styleUrls": [
+                "./paginator.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./paginator.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "customClasses",
+                    "defaultValue": "['']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hidePageSize",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "length",
+                    "defaultValue": "50",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "pageIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "pageSize",
+                    "defaultValue": "10",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "pageSizeOptions",
+                    "defaultValue": "[5, 10, 25]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "showFirstLastButtons",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "showPageSizeOptions",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "eventChangePage",
+                    "defaultValue": "new EventEmitter<PageEvent>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter<PageEvent>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "pageEvent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PageEvent | any",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handlePageEvent",
+                    "args": [
+                        {
+                            "name": "e",
+                            "type": "PageEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "e",
+                            "type": "PageEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setPageSizeOptions",
+                    "args": [
+                        {
+                            "name": "setPageSizeOptionsInput",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "setPageSizeOptionsInput",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { PageEvent } from '@angular/material/paginator';\n\n@Component({\n  selector: 'pl-paginator',\n  templateUrl: './paginator.component.html',\n  styleUrls: ['./paginator.component.scss'],\n})\nexport class PaginatorComponent implements OnInit {\n  @Input() customClasses: string[] = [''];\n  @Input() length: number = 50;\n  @Input() pageSize: number = 10;\n  @Input() pageIndex: number = 0;\n  @Input() pageSizeOptions: number[] = [5, 10, 25];\n  @Input() hidePageSize: boolean = false;\n  @Input() showPageSizeOptions: boolean = true;\n  @Input() showFirstLastButtons: boolean = true;\n  @Input() disabled: boolean = false;\n\n  @Output() eventChangePage: EventEmitter<PageEvent> =\n    new EventEmitter<PageEvent>();\n\n  pageEvent: PageEvent | any;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  handlePageEvent(e: PageEvent) {\n    this.eventChangePage.emit(e);\n  }\n\n  setPageSizeOptions(setPageSizeOptionsInput: string) {\n    if (setPageSizeOptionsInput) {\n      this.pageSizeOptions = setPageSizeOptionsInput\n        .split(',')\n        .map((str) => +str);\n    }\n  }\n\n  public get classes(): string[] {\n    return this.customClasses;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./paginator.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 23
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 41
+                    }
+                }
+            },
+            "templateData": "<mat-paginator\n  [ngClass]=\"classes\"\n  (page)=\"handlePageEvent($event)\"\n  [length]=\"length\"\n  [pageSize]=\"pageSize\"\n  [disabled]=\"disabled\"\n  [showFirstLastButtons]=\"showFirstLastButtons\"\n  [pageSizeOptions]=\"showPageSizeOptions ? pageSizeOptions : []\"\n  [hidePageSize]=\"hidePageSize\"\n  [pageIndex]=\"pageIndex\"\n  aria-label=\"Select page\"\n>\n</mat-paginator>\n"
+        },
+        {
             "name": "PatternLibComponent",
             "id": "component-PatternLibComponent-8479deeca0a35f545a267aa31eb9d39427cfe862140ebc84f4883edbbaa083e584cf5861c003d41eb43abdd9a1eaf002a128ff4aa110e8a2341827cc1db60bfc",
             "file": "projects/pattern-lib/src/lib/pattern-lib.component.ts",
@@ -1029,18 +2192,148 @@
             "implements": [
                 "OnInit"
             ]
+        },
+        {
+            "name": "TableComponent",
+            "id": "component-TableComponent-b4cd7fe642dd68e806202789b658c771a2a7e290608bbccfba4008801c9df87e38c33c792b7cdd1cdb79c7aae29008fcef65db4ef2e2ab3b5be0438506f9c4fe",
+            "file": "projects/pattern-lib/src/lib/table/table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-table",
+            "styleUrls": [
+                "./table.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./table.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "customClasses",
+                    "defaultValue": "['full-width']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "displayedColumns",
+                    "defaultValue": "[\n    { sort: true, dataIndex: 'position', title: 'position' },\n    { sort: false, dataIndex: 'name', title: 'name' },\n    { sort: false, dataIndex: 'weight', title: 'weight' },\n    { sort: false, dataIndex: 'symbol', title: 'symbol' },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "DisplayedColumnsInterface[]",
+                    "decorators": []
+                },
+                {
+                    "name": "matSortActive",
+                    "defaultValue": "'created'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "matSortDirection",
+                    "defaultValue": "'desc'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "\"desc\" | \"asc\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dataIndexDisplayedColumns",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { AfterViewInit, Component, Input, OnInit } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\nimport { DisplayedColumnsInterface } from '../../interface/common';\n\n@Component({\n  selector: 'pl-table',\n  templateUrl: './table.component.html',\n  styleUrls: ['./table.component.scss'],\n})\nexport class TableComponent implements AfterViewInit {\n  @Input()\n  displayedColumns: DisplayedColumnsInterface[] = [\n    { sort: true, dataIndex: 'position', title: 'position' },\n    { sort: false, dataIndex: 'name', title: 'name' },\n    { sort: false, dataIndex: 'weight', title: 'weight' },\n    { sort: false, dataIndex: 'symbol', title: 'symbol' },\n  ];\n  @Input() data: any[] = [];\n  @Input() customClasses: string[] = ['full-width'];\n  @Input() matSortActive: string = 'created';\n  @Input() matSortDirection: 'desc' | 'asc' = 'desc';\n\n  dataIndexDisplayedColumns: string[] = [];\n\n  constructor() {}\n\n  public get classes(): string[] {\n    return this.customClasses;\n  }\n\n  ngAfterViewInit() {\n    this.dataIndexDisplayedColumns = this.displayedColumns.map(\n      (data: DisplayedColumnsInterface) => data.dataIndex\n    );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".full-width {\n  width: 100%;\n}\n",
+                    "styleUrl": "./table.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 23
+            },
+            "implements": [
+                "AfterViewInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 27
+                    }
+                }
+            },
+            "templateData": "<table\n  mat-table\n  [dataSource]=\"data\"\n  [ngClass]=\"classes\"\n  matSort\n  [matSortActive]=\"matSortActive\"\n  matSortDisableClear\n  [matSortDirection]=\"matSortDirection\"\n>\n  <ng-container\n    *ngFor=\"let coloumn of displayedColumns\"\n    [matColumnDef]=\"coloumn.dataIndex\"\n  >\n    <ng-container *ngIf=\"coloumn.sort\">\n      <th mat-header-cell mat-sort-header *matHeaderCellDef>\n        {{ coloumn.title }}\n      </th></ng-container\n    >\n\n    <ng-container *ngIf=\"!coloumn.sort\">\n      <th mat-header-cell *matHeaderCellDef>\n        {{ coloumn.title }}\n      </th></ng-container\n    >\n\n    <td mat-cell *matCellDef=\"let element\">{{ element[coloumn.dataIndex] }}</td>\n  </ng-container>\n\n  <tr mat-header-row *matHeaderRowDef=\"dataIndexDisplayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: dataIndexDisplayedColumns\"></tr>\n</table>\n"
         }
     ],
     "modules": [
         {
             "name": "PatternLibModule",
-            "id": "module-PatternLibModule-d3d63782fe691aff7f7e5e733baed4485b01f9fb7fe16870391dda81b23b677dd42506334a9d565a42ef59b30d53623979e39e0645f3c5062499918180a2a044",
+            "id": "module-PatternLibModule-f61a741c2470cefb09209a2b23c69d58fb5c4337c5b75c7366b0ead58feb6e0c3efcbcc5aa513e1a10e4bdb31b7960d7e73d548da6da9ec15db9144d60ae0936",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/pattern-lib/src/lib/pattern-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\nimport { AutocompleteComponent } from './autocomplete/autocomplete.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n    AutocompleteComponent,\n  ],\n  imports: [\n    MatButtonModule,\n    CommonModule,\n    MatIconModule,\n    MatAutocompleteModule,\n    MatFormFieldModule,\n    FormsModule,\n    ReactiveFormsModule,\n    MatInputModule,\n  ],\n  exports: [PatternLibComponent, ButtonFlatComponent],\n})\nexport class PatternLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatDialogModule } from '@angular/material/dialog';\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\nimport { AutocompleteComponent } from './autocomplete/autocomplete.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { InputComponent } from './input/input.component';\nimport { InputTextAreaComponent } from './input-text-area/input-text-area.component';\nimport { TableComponent } from './table/table.component';\nimport { MatSortModule } from '@angular/material/sort';\nimport { PaginatorComponent } from './paginator/paginator.component';\nimport { DialogComponent } from './dialog/dialog.component';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n    AutocompleteComponent,\n    InputComponent,\n    InputTextAreaComponent,\n    TableComponent,\n    PaginatorComponent,\n    DialogComponent,\n  ],\n  imports: [\n    MatButtonModule,\n    CommonModule,\n    MatIconModule,\n    MatAutocompleteModule,\n    MatFormFieldModule,\n    FormsModule,\n    ReactiveFormsModule,\n    MatInputModule,\n    MatTableModule,\n    MatSortModule,\n    MatPaginatorModule,\n    MatDialogModule,\n  ],\n  exports: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    AutocompleteComponent,\n    ButtonStrokedComponent,\n    InputComponent,\n    InputTextAreaComponent,\n    TableComponent,\n    PaginatorComponent,\n    DialogComponent,\n  ],\n})\nexport class PatternLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -1059,7 +2352,22 @@
                             "name": "ButtonStrokedComponent"
                         },
                         {
+                            "name": "DialogComponent"
+                        },
+                        {
+                            "name": "InputComponent"
+                        },
+                        {
+                            "name": "InputTextAreaComponent"
+                        },
+                        {
+                            "name": "PaginatorComponent"
+                        },
+                        {
                             "name": "PatternLibComponent"
+                        },
+                        {
+                            "name": "TableComponent"
                         }
                     ]
                 },
@@ -1071,10 +2379,31 @@
                     "type": "exports",
                     "elements": [
                         {
+                            "name": "AutocompleteComponent"
+                        },
+                        {
                             "name": "ButtonFlatComponent"
                         },
                         {
+                            "name": "ButtonStrokedComponent"
+                        },
+                        {
+                            "name": "DialogComponent"
+                        },
+                        {
+                            "name": "InputComponent"
+                        },
+                        {
+                            "name": "InputTextAreaComponent"
+                        },
+                        {
+                            "name": "PaginatorComponent"
+                        },
+                        {
                             "name": "PatternLibComponent"
+                        },
+                        {
+                            "name": "TableComponent"
                         }
                     ]
                 },
@@ -1096,6 +2425,46 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/AutoComplete.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Dialog.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Input.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Table.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Pagination.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1224,16 +2593,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/AutoComplete.stories.tsx",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<AutocompleteComponent>",
-                "defaultValue": "(\n  args: AutocompleteComponent\n) => ({\n  component: AutocompleteComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1244,21 +2603,11 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/ButtonStroked.stories.tsx",
+                "file": "stories/AutoComplete.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonStrokedComponent>",
-                "defaultValue": "(\n  args: ButtonStrokedComponent\n) => ({\n  component: ButtonStrokedComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "type": "Story<AutocompleteComponent>",
+                "defaultValue": "(\n  args: AutocompleteComponent\n) => ({\n  component: AutocompleteComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1274,11 +2623,91 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/ButtonStroked.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonStrokedComponent>",
+                "defaultValue": "(\n  args: ButtonStrokedComponent\n) => ({\n  component: ButtonStrokedComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Dialog.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DialogComponent>",
+                "defaultValue": "(args: DialogComponent) => ({\n  component: DialogComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/InputTextArea.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTextAreaComponent>",
+                "defaultValue": "(\n  args: InputTextAreaComponent\n) => ({\n  component: InputTextAreaComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Input.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputComponent>",
+                "defaultValue": "(args: InputComponent) => ({\n  component: InputComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Table.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TableComponent>",
+                "defaultValue": "(args: TableComponent) => ({\n  component: TableComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Pagination.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PaginatorComponent>",
+                "defaultValue": "(args: PaginatorComponent) => ({\n  component: PaginatorComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "TextArea",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/InputTextArea.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -1317,6 +2746,94 @@
                     "deprecationMessage": "",
                     "type": "Story<AutocompleteComponent>",
                     "defaultValue": "(\n  args: AutocompleteComponent\n) => ({\n  component: AutocompleteComponent,\n  props: args,\n})"
+                }
+            ],
+            "stories/Dialog.stories.tsx": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Dialog.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Dialog.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DialogComponent>",
+                    "defaultValue": "(args: DialogComponent) => ({\n  component: DialogComponent,\n  props: args,\n})"
+                }
+            ],
+            "stories/Input.stories.tsx": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Input.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Input.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputComponent>",
+                    "defaultValue": "(args: InputComponent) => ({\n  component: InputComponent,\n  props: args,\n})"
+                }
+            ],
+            "stories/Table.stories.tsx": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Table.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Table.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TableComponent>",
+                    "defaultValue": "(args: TableComponent) => ({\n  component: TableComponent,\n  props: args,\n})"
+                }
+            ],
+            "stories/Pagination.stories.tsx": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Pagination.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Pagination.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PaginatorComponent>",
+                    "defaultValue": "(args: PaginatorComponent) => ({\n  component: PaginatorComponent,\n  props: args,\n})"
                 }
             ],
             "projects/pattern-lib/src/test.ts": [
@@ -1499,6 +3016,28 @@
                     "type": "Story<ButtonStrokedComponent>",
                     "defaultValue": "(\n  args: ButtonStrokedComponent\n) => ({\n  component: ButtonStrokedComponent,\n  props: args,\n})"
                 }
+            ],
+            "stories/InputTextArea.stories.tsx": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/InputTextArea.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<InputTextAreaComponent>",
+                    "defaultValue": "(\n  args: InputTextAreaComponent\n) => ({\n  component: InputTextAreaComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "TextArea",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/InputTextArea.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1521,16 +3060,25 @@
     },
     "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
+            {
+                "filePath": "projects/pattern-lib/src/interface/common.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DisplayedColumnsInterface",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
             {
                 "filePath": "projects/pattern-lib/src/lib/autocomplete/autocomplete.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AutocompleteComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/26",
                 "status": "low"
             },
             {
@@ -1539,7 +3087,7 @@
                 "linktype": "component",
                 "name": "ButtonFlatComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
@@ -1548,7 +3096,43 @@
                 "linktype": "component",
                 "name": "ButtonStrokedComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/14",
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/dialog/dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/input-text-area/input-text-area.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputTextAreaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/23",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/23",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/paginator/paginator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PaginatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -1567,6 +3151,15 @@
                 "name": "PatternLibService",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/table/table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -1700,6 +3293,26 @@
                 "status": "low"
             },
             {
+                "filePath": "stories/Dialog.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Dialog.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/Header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1730,6 +3343,46 @@
                 "status": "low"
             },
             {
+                "filePath": "stories/Input.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Input.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/InputTextArea.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/InputTextArea.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TextArea",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "stories/Page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1751,6 +3404,46 @@
             },
             {
                 "filePath": "stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Pagination.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Pagination.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Table.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Table.stories.tsx",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
