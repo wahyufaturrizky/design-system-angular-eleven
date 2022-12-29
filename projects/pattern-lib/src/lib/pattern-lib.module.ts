@@ -12,6 +12,7 @@ import { ButtonFlatComponent } from './button-flat/button-flat.component';
 import { ButtonStrokedComponent } from './button-stroked/button-stroked.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonFlatComponent,
     ButtonStrokedComponent,
     AutocompleteComponent,
+    InputComponent,
   ],
   imports: [
     MatButtonModule,

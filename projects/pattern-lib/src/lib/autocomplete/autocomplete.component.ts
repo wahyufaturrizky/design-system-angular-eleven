@@ -27,9 +27,8 @@ export class AutocompleteComponent implements OnInit {
   @Input() label: string = 'Text goes here';
   @Input() color: ThemePalette = 'primary';
   @Input() appearance: MatFormFieldAppearance = 'fill';
-  @Input() floatLabel: FloatLabelType = 'always';
+  @Input() floatLabel: FloatLabelType = 'auto';
   @Input() hideRequiredMarker: boolean = false;
-  @Input() disabled: boolean = false;
   @Input() required: boolean = false;
   @Input() ariaLabel: string | undefined;
   @Input() type: typeField = 'text';
