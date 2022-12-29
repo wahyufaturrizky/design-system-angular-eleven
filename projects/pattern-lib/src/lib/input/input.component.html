@@ -1,0 +1,28 @@
+<mat-form-field
+  [ngClass]="classes"
+  [color]="color"
+  [appearance]="appearance"
+  [floatLabel]="floatLabel"
+  [hideRequiredMarker]="hideRequiredMarker"
+  [hintLabel]="hintLabel"
+>
+  <mat-label>{{ label }}</mat-label>
+  <mat-icon *ngIf="namePrefixIcon" [color]="colorPrefix" matPrefix>{{
+    namePrefixIcon
+  }}</mat-icon>
+  <input
+    [type]="type"
+    matInput
+    [placeholder]="placeholder"
+    [ariaLabel]="ariaLabel"
+    [required]="required"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [formControl]="formControl"
+    [maxLength]="maxLength"
+    [minlength]="minlength"
+  />
+  <mat-icon *ngIf="nameSuffixesIcon" [color]="colorSuffix" matSuffix>{{
+    nameSuffixesIcon
+  }}</mat-icon>
+</mat-form-field>

@@ -4,16 +4,25 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { moduleMetadata } from "@storybook/angular";
 import { Meta, Story } from "@storybook/angular/types-6-0";
-import { AutocompleteComponent } from "projects/pattern-lib/src/lib/autocomplete/autocomplete.component";
+import { InputComponent } from "projects/pattern-lib/src/lib/input/input.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatIconModule } from "@angular/material/icon";
 
 export default {
-  title: "ADL DESIGN SYSTEM/AutoComplete",
-  component: AutocompleteComponent,
+  title: "ADL DESIGN SYSTEM/Input",
+  component: InputComponent,
   argTypes: {
     label: { control: "text" },
     color: {
+      options: ["primary", "accent", "warn"],
+      control: { type: "radio" },
+    },
+    colorSuffix: {
+      options: ["primary", "accent", "warn"],
+      control: { type: "radio" },
+    },
+    colorPrefix: {
       options: ["primary", "accent", "warn"],
       control: { type: "radio" },
     },
@@ -66,15 +75,14 @@ export default {
         FormsModule,
         BrowserModule,
         BrowserAnimationsModule,
+        MatIconModule,
       ],
     }),
   ],
 } as Meta;
 
-const Template: Story<AutocompleteComponent> = (
-  args: AutocompleteComponent
-) => ({
-  component: AutocompleteComponent,
+const Template: Story<InputComponent> = (args: InputComponent) => ({
+  component: InputComponent,
   props: args,
 });
 
@@ -85,9 +93,16 @@ Basic.args = {
   hintLabel: "Hint label here",
   appearance: "fill",
   color: "primary",
+  colorSuffix: "primary",
+  colorPrefix: "primary",
   hideRequiredMarker: false,
+  disabled: false,
   required: false,
-  floatLabel: "auto",
+  readonly: false,
+  minlength: 0,
+  maxLength: 12,
+  floatLabel: "always",
   type: "text",
-  options: ["One", "Two", "Three"],
+  nameSuffixesIcon: "search",
+  namePrefixIcon: "tune",
 };
