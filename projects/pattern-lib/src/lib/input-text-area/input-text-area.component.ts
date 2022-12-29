@@ -15,7 +15,7 @@ import { typeField } from '../../interface/common';
 export class InputTextAreaComponent implements OnInit {
   constructor() {}
 
-  @Input() customClasses: string | undefined;
+  @Input() customClasses: string[] = [''];
   @Input() color: ThemePalette = 'primary';
   @Input() colorSuffix: ThemePalette = 'primary';
   @Input() colorPrefix: ThemePalette = 'primary';
@@ -37,7 +37,7 @@ export class InputTextAreaComponent implements OnInit {
   @Input() namePrefixIcon: string | null = '';
 
   public get classes(): string[] {
-    return [String(this.customClasses)];
+    return this.customClasses;
   }
 
   ngOnInit(): void {}

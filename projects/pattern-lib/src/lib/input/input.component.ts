@@ -13,7 +13,7 @@ import { typeField } from '../../interface/common';
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent implements OnInit {
-  @Input() customClasses: string | undefined;
+  @Input() customClasses: string[] = [''];
   @Input() color: ThemePalette = 'primary';
   @Input() colorSuffix: ThemePalette = 'primary';
   @Input() colorPrefix: ThemePalette = 'primary';
@@ -39,6 +39,6 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {}
 
   public get classes(): string[] {
-    return [String(this.customClasses)];
+    return this.customClasses;
   }
 }
