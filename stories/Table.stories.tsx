@@ -40,6 +40,8 @@ export const Basic = Template.bind({});
 Basic.args = {
   matSortActive: "position",
   matSortDirection: "desc",
+  customClasses: ["full-width-table"],
+  displayedColumns: ["position", "name", "weight", "symbol"],
   data: [
     { position: 1, name: "Hydrogen", weight: 1.0079, symbol: "H" },
     { position: 2, name: "Helium", weight: 4.0026, symbol: "He" },
