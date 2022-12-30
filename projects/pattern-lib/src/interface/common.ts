@@ -22,9 +22,3 @@ export type typeField =
   | 'tel'
   | 'url'
   | 'week';
-
-export interface DisplayedColumnsInterface {
-  sort: boolean;
-  dataIndex: string;
-  title: string;
-}

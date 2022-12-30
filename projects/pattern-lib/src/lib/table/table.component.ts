@@ -1,6 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
-import { DisplayedColumnsInterface } from '../../interface/common';
+import { AfterViewInit, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pl-table',
@@ -9,14 +7,9 @@ import { DisplayedColumnsInterface } from '../../interface/common';
 })
 export class TableComponent implements AfterViewInit {
   @Input()
-  displayedColumns: DisplayedColumnsInterface[] = [
-    { sort: true, dataIndex: 'position', title: 'position' },
-    { sort: false, dataIndex: 'name', title: 'name' },
-    { sort: false, dataIndex: 'weight', title: 'weight' },
-    { sort: false, dataIndex: 'symbol', title: 'symbol' },
-  ];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   @Input() data: any[] = [];
-  @Input() customClasses: string[] = ['full-width'];
+  @Input() customClasses: string[] = ['full-width-table'];
   @Input() matSortActive: string = 'created';
   @Input() matSortDirection: 'desc' | 'asc' = 'desc';
 
@@ -28,9 +21,5 @@ export class TableComponent implements AfterViewInit {
     return this.customClasses;
   }
 
-  ngAfterViewInit() {
-    this.dataIndexDisplayedColumns = this.displayedColumns.map(
-      (data: DisplayedColumnsInterface) => data.dataIndex
-    );
-  }
+  ngAfterViewInit() {}
 }
