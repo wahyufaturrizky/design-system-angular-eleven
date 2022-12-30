@@ -36,8 +36,6 @@ export class TableComponent implements AfterViewInit {
   }
 
   onClickDtail(event: any) {
-    console.log('@event', event);
-
     this.eventClickDtail.emit(event);
   }
 
