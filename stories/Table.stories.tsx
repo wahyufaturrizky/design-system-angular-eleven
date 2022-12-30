@@ -1,3 +1,4 @@
+import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSortModule } from "@angular/material/sort";
 import { MatTableModule } from "@angular/material/table";
@@ -26,6 +27,7 @@ export default {
         MatIconModule,
         MatTableModule,
         MatSortModule,
+        MatButtonModule,
       ],
     }),
   ],
@@ -41,7 +43,7 @@ Basic.args = {
   matSortActive: "position",
   matSortDirection: "desc",
   customClasses: ["full-width-table"],
-  displayedColumns: ["position", "name", "weight", "symbol"],
+  displayedColumns: ["position", "name", "weight", "symbol", "Action"],
   data: [
     { position: 1, name: "Hydrogen", weight: 1.0079, symbol: "H" },
     { position: 2, name: "Helium", weight: 4.0026, symbol: "He" },
