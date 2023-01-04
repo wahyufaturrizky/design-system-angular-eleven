@@ -1027,7 +1027,7 @@
         },
         {
             "name": "CheckboxComponent",
-            "id": "component-CheckboxComponent-7a3c2fda9745728e01d25e8e0a444ec2c03c4c519ac20a77937978e6796b76066d2adea6ba5a17aee5e9194a6ae9755a0737e7bd0829dbf9da4317b488111385",
+            "id": "component-CheckboxComponent-d67a5bb0649cc0fcc16231d49296caebeb963c034827a21efda33f9de3fd93e8993f7b5e251d57728172d093eb7a52cdd10c67b92a95cde15619e49d9307974c",
             "file": "projects/pattern-lib/src/lib/checkbox/checkbox.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1049,8 +1049,17 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "ThemePalette",
                     "decorators": []
                 },
                 {
@@ -1058,7 +1067,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1067,7 +1076,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 11,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1076,7 +1085,7 @@
                     "defaultValue": "'after'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 12,
                     "type": "\"before\" | \"after\"",
                     "decorators": []
                 },
@@ -1085,7 +1094,7 @@
                     "defaultValue": "'Text goes here'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 14,
                     "type": "string",
                     "decorators": []
                 }
@@ -1099,7 +1108,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1111,7 +1120,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'pl-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.scss']\n})\nexport class CheckboxComponent implements OnInit {\n  @Input() checked = false;\n  @Input() indeterminate = false;\n  @Input() labelPosition: 'before' | 'after' = 'after';\n  @Input() disabled = false;\n  @Input() text: string = 'Text goes here';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { ThemePalette } from '@angular/material/core';\n\n@Component({\n  selector: 'pl-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.scss']\n})\nexport class CheckboxComponent implements OnInit {\n  @Input() checked = false;\n  @Input() indeterminate = false;\n  @Input() labelPosition: 'before' | 'after' = 'after';\n  @Input() disabled = false;\n  @Input() text: string = 'Text goes here';\n  @Input() color: ThemePalette = 'primary';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1126,12 +1135,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 13
+                "line": 15
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<mat-checkbox\n    class=\"example-margin\"\n    [(ngModel)]=\"checked\"\n    [(indeterminate)]=\"indeterminate\"\n    [labelPosition]=\"labelPosition\"\n    [disabled]=\"disabled\">\n    {{ text }}\n</mat-checkbox>"
+            "templateData": "<mat-checkbox\n    class=\"example-margin\"\n    [color]=\"color\"\n    [checked]=\"checked\"\n    [(indeterminate)]=\"indeterminate\"\n    [labelPosition]=\"labelPosition\"\n    [disabled]=\"disabled\">\n    {{ text }}\n</mat-checkbox>"
         },
         {
             "name": "DialogComponent",
@@ -2541,6 +2550,16 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Checkbox.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Dialog.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2700,6 +2719,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/AutoComplete.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2720,21 +2749,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/ButtonStroked.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonStrokedComponent>",
                 "defaultValue": "(\n  args: ButtonStrokedComponent\n) => ({\n  component: ButtonStrokedComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Checkbox.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CheckboxComponent>",
+                "defaultValue": "(args: CheckboxComponent) => ({\n    component: CheckboxComponent,\n    props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2760,21 +2789,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/InputTextArea.stories.tsx",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<InputTextAreaComponent>",
-                "defaultValue": "(\n  args: InputTextAreaComponent\n) => ({\n  component: InputTextAreaComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Input.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<InputComponent>",
                 "defaultValue": "(args: InputComponent) => ({\n  component: InputComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/InputTextArea.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<InputTextAreaComponent>",
+                "defaultValue": "(\n  args: InputTextAreaComponent\n) => ({\n  component: InputTextAreaComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2853,6 +2882,28 @@
                     "deprecationMessage": "",
                     "type": "Story<AutocompleteComponent>",
                     "defaultValue": "(\n  args: AutocompleteComponent\n) => ({\n  component: AutocompleteComponent,\n  props: args,\n})"
+                }
+            ],
+            "stories/Checkbox.stories.tsx": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Checkbox.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Checkbox.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CheckboxComponent>",
+                    "defaultValue": "(args: CheckboxComponent) => ({\n    component: CheckboxComponent,\n    props: args,\n})"
                 }
             ],
             "stories/Dialog.stories.tsx": [
@@ -3203,7 +3254,7 @@
                 "linktype": "component",
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -3391,6 +3442,26 @@
             },
             {
                 "filePath": "stories/ButtonStroked.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Checkbox.stories.tsx",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Checkbox.stories.tsx",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
