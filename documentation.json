@@ -1026,6 +1026,114 @@
             "templateData": "<button\n  mat-stroked-button\n  [color]=\"color\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{\n    'border-radius': borderType === 'semi-rounded' ? '8px' : '100px',\n    padding: isLabel ? paddingSizeWithLable : paddingSizeWithIcon,\n    'font-size': fontSize,\n    'line-height': lineHightSize,\n    'border-color': borderColor\n  }\"\n  (click)=\"onEventChange($event)\"\n  [mat-dialog-close]=\"matDialogClose\"\n>\n  <mat-icon *ngIf=\"isIcon\">{{ nameIcon }}</mat-icon> {{ isLabel ? label : \"\" }}\n</button>\n"
         },
         {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-7a3c2fda9745728e01d25e8e0a444ec2c03c4c519ac20a77937978e6796b76066d2adea6ba5a17aee5e9194a6ae9755a0737e7bd0829dbf9da4317b488111385",
+            "file": "projects/pattern-lib/src/lib/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "pl-checkbox",
+            "styleUrls": [
+                "./checkbox.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "indeterminate",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "labelPosition",
+                    "defaultValue": "'after'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "\"before\" | \"after\"",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "'Text goes here'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'pl-checkbox',\n  templateUrl: './checkbox.component.html',\n  styleUrls: ['./checkbox.component.scss']\n})\nexport class CheckboxComponent implements OnInit {\n  @Input() checked = false;\n  @Input() indeterminate = false;\n  @Input() labelPosition: 'before' | 'after' = 'after';\n  @Input() disabled = false;\n  @Input() text: string = 'Text goes here';\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./checkbox.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-checkbox\n    class=\"example-margin\"\n    [(ngModel)]=\"checked\"\n    [(indeterminate)]=\"indeterminate\"\n    [labelPosition]=\"labelPosition\"\n    [disabled]=\"disabled\">\n    {{ text }}\n</mat-checkbox>"
+        },
+        {
             "name": "DialogComponent",
             "id": "component-DialogComponent-035c9962026a14da3a58d90438de7d5bf58a76a599fe48b167f1e313250e97f0056adfab09c8587edd85afb6538c354988ea6a4b11d6f7982e9e314d85cbc820",
             "file": "projects/pattern-lib/src/lib/dialog/dialog.component.ts",
@@ -2323,13 +2431,13 @@
     "modules": [
         {
             "name": "PatternLibModule",
-            "id": "module-PatternLibModule-f61a741c2470cefb09209a2b23c69d58fb5c4337c5b75c7366b0ead58feb6e0c3efcbcc5aa513e1a10e4bdb31b7960d7e73d548da6da9ec15db9144d60ae0936",
+            "id": "module-PatternLibModule-2f2f250e5460c9a1ec1a72fa98bf2c513dc5089552c942ec45c596a0c4838aa45227827564a6631d925cc612b560d7abea509e82c9673c32c62a08b44fe5b678",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/pattern-lib/src/lib/pattern-lib.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatDialogModule } from '@angular/material/dialog';\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\nimport { AutocompleteComponent } from './autocomplete/autocomplete.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { InputComponent } from './input/input.component';\nimport { InputTextAreaComponent } from './input-text-area/input-text-area.component';\nimport { TableComponent } from './table/table.component';\nimport { MatSortModule } from '@angular/material/sort';\nimport { PaginatorComponent } from './paginator/paginator.component';\nimport { DialogComponent } from './dialog/dialog.component';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n    AutocompleteComponent,\n    InputComponent,\n    InputTextAreaComponent,\n    TableComponent,\n    PaginatorComponent,\n    DialogComponent,\n  ],\n  imports: [\n    MatButtonModule,\n    CommonModule,\n    MatIconModule,\n    MatAutocompleteModule,\n    MatFormFieldModule,\n    FormsModule,\n    ReactiveFormsModule,\n    MatInputModule,\n    MatTableModule,\n    MatSortModule,\n    MatPaginatorModule,\n    MatDialogModule,\n  ],\n  exports: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    AutocompleteComponent,\n    ButtonStrokedComponent,\n    InputComponent,\n    InputTextAreaComponent,\n    TableComponent,\n    PaginatorComponent,\n    DialogComponent,\n  ],\n})\nexport class PatternLibModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { PatternLibComponent } from './pattern-lib.component';\n\nimport { MatButtonModule } from '@angular/material/button';\nimport { MatIconModule } from '@angular/material/icon';\nimport { MatAutocompleteModule } from '@angular/material/autocomplete';\nimport { MatFormFieldModule } from '@angular/material/form-field';\nimport { MatInputModule } from '@angular/material/input';\nimport { MatTableModule } from '@angular/material/table';\nimport { MatPaginatorModule } from '@angular/material/paginator';\nimport { MatDialogModule } from '@angular/material/dialog';\nimport { MatCheckboxModule } from '@angular/material/checkbox'\n\nimport { CommonModule } from '@angular/common';\nimport { ButtonFlatComponent } from './button-flat/button-flat.component';\nimport { ButtonStrokedComponent } from './button-stroked/button-stroked.component';\nimport { AutocompleteComponent } from './autocomplete/autocomplete.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { InputComponent } from './input/input.component';\nimport { InputTextAreaComponent } from './input-text-area/input-text-area.component';\nimport { TableComponent } from './table/table.component';\nimport { MatSortModule } from '@angular/material/sort';\nimport { PaginatorComponent } from './paginator/paginator.component';\nimport { DialogComponent } from './dialog/dialog.component';\nimport { CheckboxComponent } from './checkbox/checkbox.component';\n\n@NgModule({\n  declarations: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    ButtonStrokedComponent,\n    AutocompleteComponent,\n    InputComponent,\n    InputTextAreaComponent,\n    TableComponent,\n    PaginatorComponent,\n    DialogComponent,\n    CheckboxComponent,\n  ],\n  imports: [\n    MatButtonModule,\n    CommonModule,\n    MatIconModule,\n    MatAutocompleteModule,\n    MatFormFieldModule,\n    FormsModule,\n    ReactiveFormsModule,\n    MatInputModule,\n    MatTableModule,\n    MatSortModule,\n    MatPaginatorModule,\n    MatDialogModule,\n    MatCheckboxModule\n  ],\n  exports: [\n    PatternLibComponent,\n    ButtonFlatComponent,\n    AutocompleteComponent,\n    ButtonStrokedComponent,\n    InputComponent,\n    InputTextAreaComponent,\n    TableComponent,\n    PaginatorComponent,\n    DialogComponent,\n  ],\n})\nexport class PatternLibModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -2346,6 +2454,9 @@
                         },
                         {
                             "name": "ButtonStrokedComponent"
+                        },
+                        {
+                            "name": "CheckboxComponent"
                         },
                         {
                             "name": "DialogComponent"
@@ -3084,6 +3195,15 @@
                 "name": "ButtonStrokedComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pattern-lib/src/lib/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox'
 
 import { CommonModule } from '@angular/common';
 import { ButtonFlatComponent } from './button-flat/button-flat.component';
@@ -21,6 +22,7 @@ import { TableComponent } from './table/table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { DialogComponent } from './dialog/dialog.component';
     TableComponent,
     PaginatorComponent,
     DialogComponent,
+    CheckboxComponent,
   ],
   imports: [
     MatButtonModule,
@@ -47,6 +50,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatSortModule,
     MatPaginatorModule,
     MatDialogModule,
+    MatCheckboxModule
   ],
   exports: [
     PatternLibComponent,
